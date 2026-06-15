@@ -1,8 +1,43 @@
-baseURL = 'http://example.org/'
-
+baseURL = 'https://judo-cattenom.fr/'
+languageCode = 'fr'
+title = 'Judo Club Cattenom Rodemack'
 theme = 'jccattenom-theme'
+defaultContentLanguage = 'fr'
 
 [params]
-  description = 'Site officiel du Judo Club Cattenom Rodemack'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+  description = 'Club de Judo, Taïso et Iaïdo à Cattenom depuis plus de 50 ans. Cours pour tous les âges de 3 à 99 ans.'
+  logo = '/images/logo.png'
+  accent = '#e2b13c'
+  phone = '+33 6 XX XX XX XX'
+  email = 'contact@judo-cattenom.fr'
+  dojo = 'Gymnase de Cattenom, 57570 Cattenom'
+  founded = '1973'
+
+[menu]
+  [[menu.main]]
+    name = 'Le Club'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = 'Horaires'
+    url = '/horaires/'
+    weight = 2
+  [[menu.main]]
+    name = 'Tarifs'
+    url = '/tarifs/'
+    weight = 3
+  [[menu.main]]
+    name = 'Boutique'
+    url = '/boutique/'
+    weight = 4
+  [[menu.main]]
+    name = 'Adhésion'
+    url = '/adhesion/'
+    weight = 5
+  [[menu.main]]
+    name = 'Contact'
+    url = '/contact/'
+    weight = 6
+
+[markup.goldmark.renderer]
+  unsafe = true

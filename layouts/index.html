@@ -1,0 +1,129 @@
+{{ define "main" }}
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__content">
+    <div class="hero__badge reveal">Depuis {{ .Site.Params.founded }}</div>
+    <h1 class="hero__title reveal">
+      Judo Club<br>
+      <span class="hero__accent">Cattenom Rodemack</span>
+    </h1>
+    <p class="hero__subtitle reveal">
+      Judo · Taïso · Iaïdo — Club familial ouverte à tous, de 3 à 99 ans.
+      Pratiquants loisir et compétiteurs jusqu'au niveau national et international.
+    </p>
+    <div class="hero__actions reveal">
+      <a href="/adhesion/" class="btn btn--primary">S'inscrire pour 2026-2027</a>
+      <a href="/contact/" class="btn btn--ghost">Nous contacter</a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Découvrir</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 0v20m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="1.5"/></svg>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats reveal">
+  <div class="container stats__grid">
+    <div class="stat">
+      <span class="stat__number">50+</span>
+      <span class="stat__label">Années d'existence</span>
+    </div>
+    <div class="stat">
+      <span class="stat__number">~100</span>
+      <span class="stat__label">Licenciés</span>
+    </div>
+    <div class="stat">
+      <span class="stat__number">3</span>
+      <span class="stat__label">Disciplines</span>
+    </div>
+    <div class="stat">
+      <span class="stat__number">3→99</span>
+      <span class="stat__label">Ans</span>
+    </div>
+  </div>
+</section>
+
+<!-- Disciplines -->
+<section class="disciplines">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Nos disciplines</span>
+      <h2>Trois voies, un même esprit</h2>
+      <p>Le corps et l'esprit, la force et la souplesse, la tradition et la compétition.</p>
+    </div>
+    <div class="disciplines__grid">
+      <article class="card card--featured reveal">
+        <div class="card__icon" aria-hidden="true">🥋</div>
+        <h3>Judo</h3>
+        <p>Art martial olympique alliant technique, tactique et respect. Pratique loisir et compétition du département au niveau international. Cours adaptés dès 4 ans.</p>
+        <ul class="card__tags">
+          <li>Compétition</li><li>Dès 4 ans</li><li>Tous niveaux</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon" aria-hidden="true">🧘</div>
+        <h3>Taïso</h3>
+        <p>Préparation physique douce inspirée du judo. Accessible à tous, sans choc ni chute. Améliorez votre souplesse, tonus et équilibre dans une ambiance conviviale.</p>
+        <ul class="card__tags">
+          <li>Doux</li><li>Adultes</li><li>Bien-être</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon" aria-hidden="true">⚔️</div>
+        <h3>Iaïdo</h3>
+        <p>Art martial japonais du sabre (katana). Pratique solo de katas qui développe concentration, précision et maîtrise de soi. Tradition martiale japonaise authentique.</p>
+        <ul class="card__tags">
+          <li>Art martial</li><li>Tradition</li><li>Concentration</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- About / Club -->
+<section class="about">
+  <div class="container about__grid">
+    <div class="reveal">
+      <span class="section-tag">Le club</span>
+      <h2>Plus de 50 ans de passion</h2>
+      {{ .Content }}
+      <div class="about__highlights">
+        <div>
+          <strong>Stages</strong>
+          <span>Toute l'année</span>
+        </div>
+        <div>
+          <strong>Inter-clubs</strong>
+          <span>Rencontres régulières</span>
+        </div>
+        <div>
+          <strong>Animations</strong>
+          <span>Petits et grands</span>
+        </div>
+      </div>
+    </div>
+    <div class="about__visual reveal">
+      <div class="about__badge">
+        <span class="about__big">50<span>+</span></span>
+        <span>années<br>de judo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta reveal">
+  <div class="container">
+    <h2>Prêt à rejoindre le dojo ?</h2>
+    <p>Essai gratuit pour les nouveaux venus. Inscription en ligne en quelques minutes via HelloAsso.</p>
+    <div class="cta__actions">
+      <a href="/adhesion/" class="btn btn--primary">S'inscrire maintenant</a>
+      <a href="/tarifs/" class="btn btn--ghost">Voir les tarifs</a>
+    </div>
+  </div>
+</section>
+
+{{ end }}

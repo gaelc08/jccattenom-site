@@ -1,19 +1,43 @@
 ---
-title: Tarifs
-date: 2026-06-15
+title: "Tarifs"
 ---
 
-# Tarifs
+* Baby judo : **130 €**
 
-**Adhésion annuelle**
 
-- Enfant (-12 ans) : 120€
-- Adulte : 180€
-- Famille (2 adultes + 2 enfants) : 450€
 
-**Inclusions :**
-- Licence FFJDA
-- Accès à tous les cours
-- Assurance responsabilité civile
+_Règlement en 3 fois : 50 + 50 + 30_
 
-*Paiement en plusieurs fois possible.*
+  * Mini-poussins et poussins : **175 €**
+
+
+
+_Règlement en 3 fois : 60 + 60 + 55_
+
+  * Benjamins et minimes : **200 €**
+
+
+
+_Règlement en 3 fois : 70 + 70 + 60_
+
+  * Cadets, juniors, séniors et vétérans : **210 €**
+
+
+
+_Règlement en 3 fois : 70 + 70 + 70_
+
+  * Iaido : **145 €**
+
+
+  * Taiso : **180 €**
+
+
+
+_Règlement en 3 fois : 60 + 60 + 60_
+
+## PACK FAMILLE
+
+  * 2 licenciés de la même famille (fratrie ou parent-enfant) : **– 20 € pour le 2ème licencié. **
+
+
+  * 3 licenciés ou plus de la même famille (fratrie ou parent-enfant) : **-50 € pour le 3ème licencié et les suivants**.

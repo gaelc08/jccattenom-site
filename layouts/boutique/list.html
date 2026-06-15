@@ -1,0 +1,306 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="container">
+    <a href="/" class="page-hero__back">← Retour à l'accueil</a>
+    <h1>Boutique du Club</h1>
+    <p class="page-hero__subtitle">Vêtements et accessoires aux couleurs du Judo Club Cattenom Rodemack</p>
+  </div>
+</section>
+
+<section class="boutique">
+  <div class="container">
+
+    <!-- Info banner -->
+    <div class="boutique__info reveal">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+      <div>
+        <strong>Comment commander ?</strong>
+        <span>Les commandes se font directement au dojo lors des horaires d'entraînement. Paiement par HelloAsso (CB sécurisé) ou en espèces/chèque. Tailles disponibles du XS au 4XL selon les articles.</span>
+      </div>
+    </div>
+
+    <!-- Réduction comité -->
+    <div class="boutique__reduc reveal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 16v-4M12 8h.01"/></svg>
+      <div>
+        <strong>Prix réduits pour les membres du comité</strong>
+        <span>Un code de réduction est disponible auprès du bureau pour les membres du comité directeur. Renseignez-vous au dojo !</span>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="products">
+
+      <!-- Veste Softshell Homme -->
+      <article class="product reveal product--featured" data-images="veste_front,veste_back">
+        <div class="product__gallery">
+          <img src="/boutique/images/veste_front.jpeg" alt="Veste Softshell Homme - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="/boutique/images/veste_back.jpeg" alt="Veste Softshell Homme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+        </div>
+        <div class="product__body">
+          <span class="product__category">Vestes</span>
+          <h3 class="product__name">Veste Softshell</h3>
+          <p class="product__desc">Veste softshell coupe-vent et résistante à l'eau. Parfaite pour les déplacements en compétition.</p>
+          <div class="product__sizes">
+            <span class="size-badge">XS</span>
+            <span class="size-badge">S</span>
+            <span class="size-badge">M</span>
+            <span class="size-badge">L</span>
+            <span class="size-badge">XL</span>
+            <span class="size-badge">XXL</span>
+            <span class="size-badge">3XL</span>
+            <span class="size-badge">4XL</span>
+          </div>
+          <div class="product__pricing">
+            <span class="product__price">55 €</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Veste Molleton Femme -->
+      <article class="product reveal">
+        <div class="product__gallery">
+          <img src="/boutique/images/veste_front.jpeg" alt="Veste Molleton Femme - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="/boutique/images/veste_back.jpeg" alt="Veste Molleton Femme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+        </div>
+        <div class="product__body">
+          <span class="product__category">Vestes</span>
+          <h3 class="product__name">Veste Molleton Femme</h3>
+          <p class="product__desc">Veste molleton chaude et confortable, idéale pour l'échauffement et le retour au calme.</p>
+          <div class="product__sizes">
+            <span class="size-badge">XS</span>
+            <span class="size-badge">S</span>
+            <span class="size-badge active">M</span>
+            <span class="size-badge">L</span>
+            <span class="size-badge">XL</span>
+            <span class="size-badge">XXL</span>
+            <span class="size-badge">3XL</span>
+            <span class="size-badge">4XL</span>
+          </div>
+          <div class="product__pricing">
+            <span class="product__price">35 €</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Polaire Femme (Bonus dans les images) -->
+      <article class="product reveal">
+        <div class="product__gallery">
+          <img src="/boutique/images/polaire_femme_front.jpeg" alt="Polaire Femme - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="/boutique/images/polaire_femme_back.jpeg" alt="Polaire Femme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+        </div>
+        <div class="product__body">
+          <span class="product__category">Vestes</span>
+          <h3 class="product__name">Polaire Femme</h3>
+          <p class="product__desc">Polaire douce et légère, parfaite pour les sorties sportives et le quotidien.</p>
+          <div class="product__sizes">
+            <span class="size-badge">XS</span>
+            <span class="size-badge">S</span>
+            <span class="size-badge active">M</span>
+            <span class="size-badge">L</span>
+            <span class="size-badge">XL</span>
+          </div>
+          <div class="product__pricing">
+            <span class="product__price">35 €</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Hoodie Adulte -->
+      <article class="product reveal">
+        <div class="product__gallery">
+          <img src="/boutique/images/hoodies_homme_front.jpeg" alt="Hoodie Adulte - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="/boutique/images/hoodies_homme_back.jpeg" alt="Hoodie Adulte - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+        </div>
+        <div class="product__body">
+          <span class="product__category">Sweats</span>
+          <h3 class="product__name">Hoodie Adulte</h3>
+          <p class="product__desc">Sweat à capuche unisexe, chaud et confortable. Le classique du vestiaire du judoka.</p>
+          <div class="product__sizes">
+            <span class="size-badge">XS</span>
+            <span class="size-badge">S</span>
+            <span class="size-badge">M</span>
+            <span class="size-badge">L</span>
+            <span class="size-badge">XL</span>
+            <span class="size-badge">XXL</span>
+            <span class="size-badge">3XL</span>
+            <span class="size-badge">4XL</span>
+          </div>
+          <div class="product__pricing">
+            <span class="product__price">25 €</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Hoodie Femme (images disponibles) -->
+      <article class="product reveal">
+        <div class="product__gallery">
+          <img src="/boutique/images/hoodies_femme_front.jpeg" alt="Hoodie Femme - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="/boutique/images/hoodies_femme_back.jpeg" alt="Hoodie Femme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+        </div>
+        <div class="product__body">
+          <span class="product__category">Sweats</span>
+          <h3 class="product__name">Hoodie Femme</h3>
+          <p class="product__desc">Sweat à capuche coupe féminine. Confortable et stylé pour les entraînements et au-delà.</p>
+          <div class="product__sizes">
+            <span class="size-badge">XS</span>
+            <span class="size-badge">S</span>
+            <span class="size-badge active">M</span>
+            <span class="size-badge">L</span>
+            <span class="size-badge">XL</span>
+          </div>
+          <div class="product__pricing">
+            <span class="product__price">25 €</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Hoodie Junior -->
+      <article class="product reveal">
+        <div class="product__gallery">
+          <img src="/boutique/images/hoodies_homme_front.jpeg" alt="Hoodie Junior - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="/boutique/images/hoodies_homme_back.jpeg" alt="Hoodie Junior - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+        </div>
+        <div class="product__body">
+          <span class="product__category">Sweats</span>
+          <h3 class="product__name">Hoodie Junior</h3>
+          <p class="product__desc">Sweat à capuche pour les plus jeunes judokas. Tailles 5-6 ans à 12-13 ans.</p>
+          <div class="product__sizes">
+            <span class="size-badge">5-6 ans</span>
+            <span class="size-badge">7-8 ans</span>
+            <span class="size-badge">9-11 ans</span>
+            <span class="size-badge">12-13 ans</span>
+          </div>
+          <div class="product__pricing">
+            <span class="product__price">23 €</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- T-shirt Mixte Adulte -->
+      <article class="product reveal">
+        <div class="product__gallery">
+          <img src="/boutique/images/tshirt_homme_front.jpeg" alt="T-shirt Mixte Adulte - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="/boutique/images/tshirt_homme_back.jpeg" alt="T-shirt Mixte Adulte - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+        </div>
+        <div class="product__body">
+          <span class="product__category">T-shirts</span>
+          <h3 class="product__name">T-shirt Mixte Adulte</h3>
+          <p class="product__desc">T-shirt coton aux couleurs du club. Coupe unisexe, disponible dans de nombreuses tailles.</p>
+          <div class="product__sizes">
+            <span class="size-badge">XS</span>
+            <span class="size-badge">S</span>
+            <span class="size-badge active">M</span>
+            <span class="size-badge">L</span>
+            <span class="size-badge">XL</span>
+            <span class="size-badge">XXL</span>
+            <span class="size-badge">3XL</span>
+            <span class="size-badge">4XL</span>
+          </div>
+          <div class="product__pricing">
+            <span class="product__price">10 €</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Casquette Adulte -->
+      <article class="product reveal">
+        <div class="product__gallery">
+          <img src="/boutique/images/casquette_1.jpeg" alt="Casquette Adulte" class="product__img" width="400" height="400" loading="lazy">
+          <img src="/boutique/images/casquette_2.jpeg" alt="Casquette Adulte - détail" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+        </div>
+        <div class="product__body">
+          <span class="product__category">Accessoires</span>
+          <h3 class="product__name">Casquette Adulte</h3>
+          <p class="product__desc">Casquette brodée aux couleurs du club. Taille unique ajustable.</p>
+          <div class="product__sizes">
+            <span class="size-badge">Taille unique</span>
+          </div>
+          <div class="product__pricing">
+            <span class="product__price">10 €</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Casquette Enfant -->
+      <article class="product reveal">
+        <div class="product__gallery">
+          <img src="/boutique/images/casquette_1.jpeg" alt="Casquette Enfant" class="product__img" width="400" height="400" loading="lazy">
+          <img src="/boutique/images/casquette_2.jpeg" alt="Casquette Enfant - détail" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+        </div>
+        <div class="product__body">
+          <span class="product__category">Accessoires</span>
+          <h3 class="product__name">Casquette Enfant</h3>
+          <p class="product__desc">Casquette enfant brodée aux couleurs du club. Taille unique ajustable.</p>
+          <div class="product__sizes">
+            <span class="size-badge">Taille unique</span>
+          </div>
+          <div class="product__pricing">
+            <span class="product__price">8 €</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sac de Sport 75L -->
+      <article class="product reveal product--featured">
+        <div class="product__gallery">
+          <img src="/boutique/images/sac_sport.jpeg" alt="Sac de Sport 75L" class="product__img" width="400" height="400" loading="lazy">
+          <img src="/boutique/images/sac_sport_details.jpeg" alt="Sac de Sport 75L - détails" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+        </div>
+        <div class="product__body">
+          <span class="product__category">Accessoires</span>
+          <h3 class="product__name">Sac de Sport 75L</h3>
+          <p class="product__desc">Grand sac de sport 75 litres, parfait pour transporter kimono, protections et affaires de rechange. Compartiments multiples.</p>
+          <div class="product__sizes">
+            <span class="size-badge">75L</span>
+          </div>
+          <div class="product__pricing">
+            <span class="product__price">40 €</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="boutique__cta reveal">
+      <h2>Intéressé(e) ?</h2>
+      <p>Les commandes se passent directement au dojo lors des horaires d'entraînement. <strong>Paiement par HelloAsso (CB sécurisé), en espèces ou par chèque.</strong></p>
+      <a href="/contact/" class="btn btn--primary">Nous contacter</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// Toggle front/back images on hover/click
+document.querySelectorAll('.product').forEach(card => {
+  const imgs = card.querySelectorAll('.product__img');
+  if (imgs.length < 2) return;
+  const front = imgs[0];
+  const back = imgs[1];
+  
+  // Mouse hover (desktop)
+  card.querySelector('.product__gallery').addEventListener('mouseenter', () => {
+    front.style.opacity = '0';
+    back.style.opacity = '1';
+  });
+  card.querySelector('.product__gallery').addEventListener('mouseleave', () => {
+    front.style.opacity = '1';
+    back.style.opacity = '0';
+  });
+  
+  // Tap (mobile)
+  card.querySelector('.product__gallery').addEventListener('click', () => {
+    const showing = front.style.opacity === '0' ? 'front' : 'back';
+    if (showing === 'front') {
+      front.style.opacity = '1';
+      back.style.opacity = '0';
+    } else {
+      front.style.opacity = '0';
+      back.style.opacity = '1';
+    }
+  });
+});
+</script>
+{{ end }}
