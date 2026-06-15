@@ -852,33 +852,6 @@ ul { list-style: none; }
   color: var(--text-muted);
   line-height: 1.5;
 }
-.boutique__reduc {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 20px 24px;
-  background: var(--accent-dim);
-  border: 1px solid rgba(226, 177, 60, 0.2);
-  border-radius: var(--radius-lg);
-  margin-bottom: 48px;
-}
-.boutique__reduc svg {
-  flex-shrink: 0;
-  color: var(--accent);
-  margin-top: 2px;
-}
-.boutique__reduc strong {
-  display: block;
-  color: var(--accent);
-  margin-bottom: 4px;
-  font-family: var(--font-head);
-  font-size: 0.95rem;
-}
-.boutique__reduc span {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
 .boutique__cta {
   text-align: center;
   padding: 64px 32px;

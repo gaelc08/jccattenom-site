@@ -2,42 +2,32 @@
 title: "Tarifs"
 ---
 
+## Cotisations saison 2025-2026
+
 * Baby judo : **130 €**
 
+  _Règlement en 3 fois : 50 + 50 + 30_
 
+* Mini-poussins et poussins : **180 €**
 
-_Règlement en 3 fois : 50 + 50 + 30_
+  _Règlement en 3 fois : 60 + 60 + 60_
 
-  * Mini-poussins et poussins : **175 €**
+* Benjamins et minimes : **200 €**
 
+  _Règlement en 3 fois : 70 + 70 + 60_
 
+* Cadets, juniors, séniors et vétérans : **210 €**
 
-_Règlement en 3 fois : 60 + 60 + 55_
+  _Règlement en 3 fois : 70 + 70 + 70_
 
-  * Benjamins et minimes : **200 €**
+* Iaïdo : **145 €**
 
+* Taïso : **180 €**
 
+  _Règlement en 3 fois : 60 + 60 + 60_
 
-_Règlement en 3 fois : 70 + 70 + 60_
+## Pack famille
 
-  * Cadets, juniors, séniors et vétérans : **210 €**
+**10 € de réduction par licence supplémentaire**, à partir de 2 licences dans la même famille (fratrie ou parent-enfant).
 
-
-
-_Règlement en 3 fois : 70 + 70 + 70_
-
-  * Iaido : **145 €**
-
-
-  * Taiso : **180 €**
-
-
-
-_Règlement en 3 fois : 60 + 60 + 60_
-
-## PACK FAMILLE
-
-  * 2 licenciés de la même famille (fratrie ou parent-enfant) : **– 20 € pour le 2ème licencié. **
-
-
-  * 3 licenciés ou plus de la même famille (fratrie ou parent-enfant) : **-50 € pour le 3ème licencié et les suivants**.
+Exemple : pour 3 licenciés bénéficiant du tarif "cadets" (210 €), le total sera de 3 × 210 € − 2 × 10 € = 610 €.
