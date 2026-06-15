@@ -10,11 +10,11 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta name="theme-color" content="#0a0f1c">
-  <link rel="icon" href="/images/logo.png" type="image/png">
+  <link rel="icon" href="{{ "images/logo.png" | relURL }}" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
   <a href="#main" class="skip-link">Aller au contenu</a>
@@ -22,8 +22,8 @@
   <!-- Nav -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="/" class="nav__brand">
-        <img src="/images/logo.png" alt="JCC" class="nav__logo">
+      <a href="{{ "/" | relURL }}" class="nav__brand">
+        <img src="{{ "images/logo.png" | relURL }}" alt="JCC" class="nav__logo">
         <div class="nav__title">
           <span class="nav__club">Judo Club Cattenom</span>
           <span class="nav__sub">Rodemack</span>
@@ -34,9 +34,9 @@
       </button>
       <div class="nav__links" id="nav-links">
         {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}" class="nav__link{{ if $.IsMenuCurrent "main" . }} nav__link--active{{ end }}">{{ .Name }}</a>
+        <a href="{{ .URL | relURL }}" class="nav__link{{ if $.IsMenuCurrent "main" . }} nav__link--active{{ end }}">{{ .Name }}</a>
         {{ end }}
-        <a href="/adhesion/" class="nav__cta">S'inscrire</a>
+        <a href="{{ "adhesion/" | relURL }}" class="nav__cta">S'inscrire</a>
       </div>
     </div>
   </nav>
@@ -49,7 +49,7 @@
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__brand">
-        <img src="/images/logo.png" alt="JCC" class="footer__logo">
+        <img src="{{ "images/logo.png" | relURL }}" alt="JCC" class="footer__logo">
         <div>
           <strong>Judo Club Cattenom Rodemack</strong>
           <p>Depuis plus de 50 ans</p>
@@ -59,7 +59,7 @@
         <div class="footer__col">
           <h4>Navigation</h4>
           {{ range .Site.Menus.main }}
-          <a href="{{ .URL }}">{{ .Name }}</a>
+          <a href="{{ .URL | relURL }}">{{ .Name }}</a>
           {{ end }}
         </div>
         <div class="footer__col">

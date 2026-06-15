@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="page-hero">
   <div class="container">
-    <a href="/" class="page-hero__back">← Retour à l'accueil</a>
+    <a href="{{ "/" | relURL }}" class="page-hero__back">← Retour à l'accueil</a>
     <h1>Boutique du Club</h1>
     <p class="page-hero__subtitle">Vêtements et accessoires aux couleurs du Judo Club Cattenom Rodemack</p>
   </div>
@@ -34,8 +34,8 @@
       <!-- Veste Softshell Homme -->
       <article class="product reveal product--featured" data-images="veste_front,veste_back">
         <div class="product__gallery">
-          <img src="/boutique/images/veste_front.jpeg" alt="Veste Softshell Homme - Face" class="product__img" width="400" height="400" loading="lazy">
-          <img src="/boutique/images/veste_back.jpeg" alt="Veste Softshell Homme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/veste_front.jpeg" | relURL }}" alt="Veste Softshell Homme - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/veste_back.jpeg" | relURL }}" alt="Veste Softshell Homme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
         </div>
         <div class="product__body">
           <span class="product__category">Vestes</span>
@@ -60,8 +60,8 @@
       <!-- Veste Molleton Femme -->
       <article class="product reveal">
         <div class="product__gallery">
-          <img src="/boutique/images/veste_front.jpeg" alt="Veste Molleton Femme - Face" class="product__img" width="400" height="400" loading="lazy">
-          <img src="/boutique/images/veste_back.jpeg" alt="Veste Molleton Femme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/veste_front.jpeg" | relURL }}" alt="Veste Molleton Femme - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/veste_back.jpeg" | relURL }}" alt="Veste Molleton Femme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
         </div>
         <div class="product__body">
           <span class="product__category">Vestes</span>
@@ -86,8 +86,8 @@
       <!-- Polaire Femme (Bonus dans les images) -->
       <article class="product reveal">
         <div class="product__gallery">
-          <img src="/boutique/images/polaire_femme_front.jpeg" alt="Polaire Femme - Face" class="product__img" width="400" height="400" loading="lazy">
-          <img src="/boutique/images/polaire_femme_back.jpeg" alt="Polaire Femme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/polaire_femme_front.jpeg" | relURL }}" alt="Polaire Femme - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/polaire_femme_back.jpeg" | relURL }}" alt="Polaire Femme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
         </div>
         <div class="product__body">
           <span class="product__category">Vestes</span>
@@ -109,8 +109,8 @@
       <!-- Hoodie Adulte -->
       <article class="product reveal">
         <div class="product__gallery">
-          <img src="/boutique/images/hoodies_homme_front.jpeg" alt="Hoodie Adulte - Face" class="product__img" width="400" height="400" loading="lazy">
-          <img src="/boutique/images/hoodies_homme_back.jpeg" alt="Hoodie Adulte - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/hoodies_homme_front.jpeg" | relURL }}" alt="Hoodie Adulte - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/hoodies_homme_back.jpeg" | relURL }}" alt="Hoodie Adulte - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
         </div>
         <div class="product__body">
           <span class="product__category">Sweats</span>
@@ -135,8 +135,8 @@
       <!-- Hoodie Femme (images disponibles) -->
       <article class="product reveal">
         <div class="product__gallery">
-          <img src="/boutique/images/hoodies_femme_front.jpeg" alt="Hoodie Femme - Face" class="product__img" width="400" height="400" loading="lazy">
-          <img src="/boutique/images/hoodies_femme_back.jpeg" alt="Hoodie Femme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/hoodies_femme_front.jpeg" | relURL }}" alt="Hoodie Femme - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/hoodies_femme_back.jpeg" | relURL }}" alt="Hoodie Femme - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
         </div>
         <div class="product__body">
           <span class="product__category">Sweats</span>
@@ -158,8 +158,8 @@
       <!-- Hoodie Junior -->
       <article class="product reveal">
         <div class="product__gallery">
-          <img src="/boutique/images/hoodies_homme_front.jpeg" alt="Hoodie Junior - Face" class="product__img" width="400" height="400" loading="lazy">
-          <img src="/boutique/images/hoodies_homme_back.jpeg" alt="Hoodie Junior - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/hoodies_homme_front.jpeg" | relURL }}" alt="Hoodie Junior - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/hoodies_homme_back.jpeg" | relURL }}" alt="Hoodie Junior - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
         </div>
         <div class="product__body">
           <span class="product__category">Sweats</span>
@@ -180,8 +180,8 @@
       <!-- T-shirt Mixte Adulte -->
       <article class="product reveal">
         <div class="product__gallery">
-          <img src="/boutique/images/tshirt_homme_front.jpeg" alt="T-shirt Mixte Adulte - Face" class="product__img" width="400" height="400" loading="lazy">
-          <img src="/boutique/images/tshirt_homme_back.jpeg" alt="T-shirt Mixte Adulte - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/tshirt_homme_front.jpeg" | relURL }}" alt="T-shirt Mixte Adulte - Face" class="product__img" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/tshirt_homme_back.jpeg" | relURL }}" alt="T-shirt Mixte Adulte - Dos" class="product__img product__img--alt" width="400" height="400" loading="lazy">
         </div>
         <div class="product__body">
           <span class="product__category">T-shirts</span>
@@ -206,8 +206,8 @@
       <!-- Casquette Adulte -->
       <article class="product reveal">
         <div class="product__gallery">
-          <img src="/boutique/images/casquette_1.jpeg" alt="Casquette Adulte" class="product__img" width="400" height="400" loading="lazy">
-          <img src="/boutique/images/casquette_2.jpeg" alt="Casquette Adulte - détail" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/casquette_1.jpeg" | relURL }}" alt="Casquette Adulte" class="product__img" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/casquette_2.jpeg" | relURL }}" alt="Casquette Adulte - détail" class="product__img product__img--alt" width="400" height="400" loading="lazy">
         </div>
         <div class="product__body">
           <span class="product__category">Accessoires</span>
@@ -225,8 +225,8 @@
       <!-- Casquette Enfant -->
       <article class="product reveal">
         <div class="product__gallery">
-          <img src="/boutique/images/casquette_1.jpeg" alt="Casquette Enfant" class="product__img" width="400" height="400" loading="lazy">
-          <img src="/boutique/images/casquette_2.jpeg" alt="Casquette Enfant - détail" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/casquette_1.jpeg" | relURL }}" alt="Casquette Enfant" class="product__img" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/casquette_2.jpeg" | relURL }}" alt="Casquette Enfant - détail" class="product__img product__img--alt" width="400" height="400" loading="lazy">
         </div>
         <div class="product__body">
           <span class="product__category">Accessoires</span>
@@ -244,8 +244,8 @@
       <!-- Sac de Sport 75L -->
       <article class="product reveal product--featured">
         <div class="product__gallery">
-          <img src="/boutique/images/sac_sport.jpeg" alt="Sac de Sport 75L" class="product__img" width="400" height="400" loading="lazy">
-          <img src="/boutique/images/sac_sport_details.jpeg" alt="Sac de Sport 75L - détails" class="product__img product__img--alt" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/sac_sport.jpeg" | relURL }}" alt="Sac de Sport 75L" class="product__img" width="400" height="400" loading="lazy">
+          <img src="{{ "boutique/images/sac_sport_details.jpeg" | relURL }}" alt="Sac de Sport 75L - détails" class="product__img product__img--alt" width="400" height="400" loading="lazy">
         </div>
         <div class="product__body">
           <span class="product__category">Accessoires</span>
@@ -266,7 +266,7 @@
     <div class="boutique__cta reveal">
       <h2>Intéressé(e) ?</h2>
       <p>Les commandes se passent directement au dojo lors des horaires d'entraînement. <strong>Paiement par HelloAsso (CB sécurisé), en espèces ou par chèque.</strong></p>
-      <a href="/contact/" class="btn btn--primary">Nous contacter</a>
+      <a href="{{ "contact/" | relURL }}" class="btn btn--primary">Nous contacter</a>
     </div>
 
   </div>

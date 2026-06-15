@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="page-hero">
   <div class="container">
-    <a href="/" class="page-hero__back">← Retour à l'accueil</a>
+    <a href="{{ "/index.html" | relURL }}" class="page-hero__back">← Retour à l'accueil</a>
     <h1>{{ .Title }}</h1>
   </div>
 </section>
