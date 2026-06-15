@@ -1,0 +1,42 @@
+:root {
+  --bg-light: #f1f5f9; /* slate-100 */
+  --bg-dark: #0f172a;
+  --text-light: #1e293b; /* slate-800 */
+  --text-dark: #f8fafc; /* slate-50 */
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  padding: 1rem;
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+a {
+  color: #3b82f6; /* blue-500 */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}

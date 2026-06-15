@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} - Judo Club Cattenom Rodemack</title>
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img class="logo" src="{{ "images/logo.png" | relURL }}" alt="Logo Judo Club Cattenom Rodemack">
+    </div>
+  </header>
+  <main class="container">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; {{ now.Year }} Judo Club Cattenom Rodemack - Tous droits réservés</p>
+    </div>
+  </footer>
+</body>
+</html>

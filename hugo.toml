@@ -1,0 +1,8 @@
+baseURL = 'http://example.org/'
+
+theme = 'jccattenom-theme'
+
+[params]
+  description = 'Site officiel du Judo Club Cattenom Rodemack'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
