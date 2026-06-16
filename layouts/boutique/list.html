@@ -66,10 +66,14 @@
 <script>
 const API_URL = 'https://judo-cattenom.fr/wp-json-shop.php';
 const HELLOASSO_URL = 'https://www.helloasso.com/associations/judo-club-cattenom-rodemack/adhesions/adhesion-2026-2027-sport';
+
+// Cart: [{ productId, variationId, name, size, qty, price }]
 let cart = JSON.parse(localStorage.getItem('jcc_cart') || '[]');
 let products = [];
+// Track selected size per product
+const selectedSize = {};
 
-// Fetch products
+// ─── Fetch products ──────────────────────────────────────────────────
 fetch(API_URL)
   .then(r => r.json())
   .then(data => {
@@ -77,31 +81,38 @@ fetch(API_URL)
     document.getElementById('loading').style.display = 'none';
     const grid = document.getElementById('products-grid');
     grid.style.display = '';
-    
     data.forEach(p => {
       grid.insertAdjacentHTML('beforeend', productCard(p));
-    });
-    
-    // Gallery hover/click
-    document.querySelectorAll('.product').forEach(card => {
+      // Init default size for variable products
+      if (p.variations && p.variations.length > 0) {
+        const firstInStock = p.variations.find(v => v.in_stock);
+        selectedSize[p.id] = firstInStock ? firstInStock.id : p.variations[0].id;
+      }
+      // Gallery hover
+      const card = grid.lastElementChild;
       const imgs = card.querySelectorAll('.product__img');
-      if (imgs.length < 2) return;
-      const front = imgs[0], others = Array.from(imgs).slice(1);
-      let current = 0;
-      
-      card.querySelector('.product__gallery').addEventListener('mouseenter', () => {
-        if (current === 0) { front.style.opacity = '0'; others[0].style.opacity = '1'; }
-      });
-      card.querySelector('.product__gallery').addEventListener('mouseleave', () => {
-        if (current === 0) { front.style.opacity = '1'; others[0].style.opacity = '0'; }
-      });
-      card.querySelector('.product__gallery').addEventListener('click', () => {
-        current = (current + 1) % imgs.length;
-        imgs.forEach((img, i) => { img.style.opacity = i === current ? '1' : '0'; });
-      });
+      if (imgs.length >= 2) {
+        const gallery = card.querySelector('.product__gallery');
+        let current = 0;
+        gallery.addEventListener('mouseenter', () => {
+          if (current === 0) { imgs[0].style.opacity = '0'; imgs[1].style.opacity = '1'; }
+        });
+        gallery.addEventListener('mouseleave', () => {
+          if (current === 0) { imgs[0].style.opacity = '1'; imgs[1].style.opacity = '0'; }
+        });
+        gallery.addEventListener('click', () => {
+          current = (current + 1) % imgs.length;
+          imgs.forEach((img, i) => { img.style.opacity = i === current ? '1' : '0'; });
+        });
+      }
+      // Size selector change
+      const select = card.querySelector('.product__size-select');
+      if (select) {
+        select.addEventListener('change', (e) => onSizeChange(p.id, parseInt(e.target.value)));
+      }
     });
-    
     updateCartUI();
+    updateAddButtons();
   })
   .catch(err => {
     document.getElementById('loading').style.display = 'none';
@@ -109,58 +120,150 @@ fetch(API_URL)
     console.error('Failed to load products:', err);
   });
 
+// ─── Product card HTML ───────────────────────────────────────────────
 function productCard(p) {
-  const imgsHtml = p.images.map((img, i) => 
-    `<img src="${img}" alt="${p.name}" class="product__img${i > 0 ? ' product__img--alt' : ''}" 
+  const imgsHtml = p.images.map((img, i) =>
+    `<img src="${img}" alt="${p.name}" class="product__img${i > 0 ? ' product__img--alt' : ''}"
      width="400" height="400" loading="lazy" style="opacity:${i === 0 ? '1' : '0'}">`
   ).join('');
-  
-  const inCart = cart.find(c => c.id === p.id);
-  const stockBadge = p.stock !== null ? `<span class="stock-badge${p.stock <= 5 ? ' low' : ''}">${p.stock <= 5 ? 'Plus que ' + p.stock : 'En stock'}</span>` : '<span class="stock-badge">En stock</span>';
-  
+
+  const hasVars = p.variations && p.variations.length > 0;
+  const priceDisplay = p.price_range
+    ? `${p.price_range.min} – ${p.price_range.max} €`
+    : `${p.price} €`;
+
+  // Size selector for variable products
+  let sizeHtml = '';
+  if (hasVars) {
+    const label = p.attrs_meta[0]?.label || 'Taille';
+    const options = p.variations.map(v => {
+      const sizeName = v.attributes[0]?.name || '';
+      const stockInfo = v.stock !== null
+        ? (v.stock === 0 ? ' — épuisé' : v.stock <= 5 ? ` — plus que ${v.stock}` : '')
+        : '';
+      const disabled = !v.in_stock && v.stock === 0;
+      return `<option value="${v.id}" ${disabled ? 'disabled' : ''}>${sizeName}${stockInfo}${disabled ? ' ✗' : ''}</option>`;
+    }).join('');
+    const firstInStock = p.variations.find(v => v.in_stock);
+    const defaultStock = firstInStock ? firstInStock.stock : null;
+    sizeHtml = `
+      <div class="product__size" data-product-id="${p.id}">
+        <label for="size-${p.id}">${label}</label>
+        <select id="size-${p.id}" class="product__size-select">
+          ${options}
+        </select>
+        <span class="product__size-stock" id="stock-${p.id}">${stockLabel(defaultStock)}</span>
+      </div>`;
+  } else {
+    const inCart = cart.find(c => c.productId === p.id);
+    sizeHtml = '';
+  }
+
   return `
-    <article class="product${p.featured ? ' product--featured' : ''}">
+    <article class="product${p.featured ? ' product--featured' : ''}" data-product-id="${p.id}">
       <div class="product__gallery">${imgsHtml}</div>
       <div class="product__body">
         <span class="product__category">${p.category}</span>
         <h3 class="product__name">${p.name}</h3>
-        <p class="product__desc">${p.description}</p>
+        <p class="product__desc">${p.description || ''}</p>
+        ${sizeHtml}
         <div class="product__pricing">
-          <span class="product__price">${p.price} €</span>
-          ${stockBadge}
+          <span class="product__price">${priceDisplay}</span>
+          ${!hasVars && p.stock !== null
+            ? `<span class="stock-badge${p.stock <= 5 ? ' low' : ''}">${stockLabel(p.stock)}</span>`
+            : ''}
         </div>
-        <button class="btn btn--cart" onclick="addToCart(${p.id})">
-          ${inCart ? '✓ Dans le panier (' + inCart.qty + ')' : '🛒 Ajouter au panier'}
+        <button class="btn btn--cart" id="btn-${p.id}" onclick="addToCart(${p.id})">
+          🛒 Ajouter au panier
         </button>
       </div>
     </article>`;
 }
 
-function addToCart(productId) {
-  const existing = cart.find(c => c.id === productId);
-  if (existing) { existing.qty++; }
-  else { cart.push({ id: productId, qty: 1 }); }
-  saveCart();
-  updateCartUI();
-  // Re-render buttons
-  document.querySelectorAll('.btn--cart').forEach(btn => {
-    const id = parseInt(btn.getAttribute('onclick').match(/\d+/)[0]);
-    const item = cart.find(c => c.id === id);
-    const p = products.find(p => p.id === id);
-    if (!p) return;
-    btn.innerHTML = item ? `✓ Dans le panier (${item.qty})` : '🛒 Ajouter au panier';
-  });
+function stockLabel(qty) {
+  if (qty === null) return 'En stock';
+  if (qty === 0) return 'Épuisé';
+  if (qty <= 5) return `Plus que ${qty}`;
+  return 'En stock';
 }
 
-function removeFromCart(productId) {
-  cart = cart.filter(c => c.id !== productId);
+// ─── Size change handler ─────────────────────────────────────────────
+function onSizeChange(productId, variationId) {
+  selectedSize[productId] = variationId;
+  const p = products.find(x => x.id === productId);
+  if (!p) return;
+  const v = p.variations.find(x => x.id === variationId);
+  if (!v) return;
+
+  // Update stock display
+  const stockEl = document.getElementById(`stock-${productId}`);
+  if (stockEl) stockEl.textContent = stockLabel(v.stock);
+
+  // Update price display
+  const card = document.querySelector(`.product[data-product-id="${productId}"]`);
+  if (card) {
+    const priceEl = card.querySelector('.product__price');
+    if (priceEl) priceEl.textContent = v.price + ' €';
+  }
+
+  // Update button state
+  updateAddButtons();
+}
+
+// ─── Add to cart (with variation support) ────────────────────────────
+function addToCart(productId) {
+  const p = products.find(x => x.id === productId);
+  if (!p) return;
+
+  const hasVars = p.variations && p.variations.length > 0;
+  const variationId = hasVars ? selectedSize[productId] : null;
+  const cartKey = variationId ? `${productId}-${variationId}` : `${productId}`;
+
+  // Find in cart by key
+  const existing = cart.find(c => getCartKey(c) === cartKey);
+  if (existing) {
+    existing.qty++;
+  } else {
+    let sizeName = '';
+    let price = p.price;
+    if (hasVars && variationId) {
+      const v = p.variations.find(x => x.id === variationId);
+      if (!v || (v.stock === 0 && !v.in_stock)) {
+        alert('Cette taille est épuisée.');
+        return;
+      }
+      sizeName = v.attributes[0]?.name || '';
+      price = v.price;
+    }
+    cart.push({
+      productId: productId,
+      variationId: variationId,
+      name: p.name,
+      size: sizeName,
+      qty: 1,
+      price: price,
+    });
+  }
+
   saveCart();
   updateCartUI();
+  updateAddButtons();
+}
+
+function getCartKey(item) {
+  return item.variationId ? `${item.productId}-${item.variationId}` : `${item.productId}`;
+}
+
+function removeFromCart(idx) {
+  cart.splice(idx, 1);
+  saveCart();
+  updateCartUI();
+  updateAddButtons();
   renderCartItems();
 }
 
-function changeQty(productId, delta) {
-  const item = cart.find(c => c.id === productId);
+function changeQty(idx, delta) {
+  const item = cart[idx];
   if (!item) return;
   item.qty = Math.max(1, item.qty + delta);
   saveCart();
@@ -173,11 +276,44 @@ function saveCart() {
 }
 
 function updateCartUI() {
-  const total = cart.length;
+  const total = cart.reduce((s, c) => s + c.qty, 0);
   const fab = document.getElementById('cart-btn');
   const count = document.getElementById('cart-count');
   fab.style.display = total > 0 ? '' : 'none';
-  count.textContent = cart.reduce((s, c) => s + c.qty, 0);
+  count.textContent = total;
+}
+
+function updateAddButtons() {
+  products.forEach(p => {
+    const btn = document.getElementById(`btn-${p.id}`);
+    if (!btn) return;
+    const hasVars = p.variations && p.variations.length > 0;
+
+    // Check if out of stock
+    if (hasVars) {
+      const vid = selectedSize[p.id];
+      const v = p.variations.find(x => x.id === vid);
+      if (v && v.stock === 0 && !v.in_stock) {
+        btn.disabled = true;
+        btn.textContent = 'Épuisé';
+        return;
+      }
+    }
+
+    btn.disabled = false;
+
+    // Count items in cart for this product/variation
+    let cartQty = 0;
+    cart.forEach(c => {
+      if (c.productId === p.id) {
+        if (!hasVars || c.variationId === selectedSize[p.id]) {
+          cartQty += c.qty;
+        }
+      }
+    });
+
+    btn.textContent = cartQty > 0 ? `✓ Dans le panier (${cartQty})` : '🛒 Ajouter au panier';
+  });
 }
 
 function toggleCart(show) {
@@ -189,51 +325,55 @@ function toggleCart(show) {
 function renderCartItems() {
   const container = document.getElementById('cart-items');
   const totalEl = document.getElementById('cart-total-price');
-  
+
   if (cart.length === 0) {
     container.innerHTML = '<p class="cart__empty">Votre panier est vide</p>';
     totalEl.textContent = '0 €';
     return;
   }
-  
+
   let total = 0;
-  container.innerHTML = cart.map(item => {
-    const p = products.find(p => p.id === item.id);
-    if (!p) return '';
-    const subtotal = p.price * item.qty;
+  container.innerHTML = cart.map((item, idx) => {
+    const subtotal = item.price * item.qty;
     total += subtotal;
+    const sizeTag = item.size ? `<span class="cart__size-tag">${item.size}</span>` : '';
     return `
       <div class="cart__item">
         <div class="cart__item-info">
-          <strong>${p.name}</strong>
-          <span>${p.price} €</span>
+          <strong>${item.name}</strong>
+          ${sizeTag}
+          <span>${item.price} €</span>
         </div>
         <div class="cart__item-actions">
-          <button onclick="changeQty(${p.id}, -1)">−</button>
+          <button onclick="changeQty(${idx}, -1)">−</button>
           <span>${item.qty}</span>
-          <button onclick="changeQty(${p.id}, 1)">+</button>
-          <button class="cart__remove" onclick="removeFromCart(${p.id})">🗑</button>
+          <button onclick="changeQty(${idx}, 1)">+</button>
+          <button class="cart__remove" onclick="removeFromCart(${idx})">🗑</button>
         </div>
         <div class="cart__item-subtotal">${subtotal.toFixed(2)} €</div>
       </div>`;
   }).join('');
-  
+
   totalEl.textContent = total.toFixed(2) + ' €';
 }
 
-// Checkout
+// ─── Checkout ────────────────────────────────────────────────────────
 document.getElementById('checkout-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = e.target.querySelector('button');
   btn.disabled = true;
   btn.textContent = 'Envoi en cours…';
-  
+
   try {
     const res = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        items: cart.map(c => ({ product_id: c.id, qty: c.qty })),
+        items: cart.map(c => ({
+          product_id: c.productId,
+          variation_id: c.variationId,
+          qty: c.qty
+        })),
         customer: {
           name: document.getElementById('customer-name').value,
           email: document.getElementById('customer-email').value,
@@ -242,23 +382,23 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
       })
     });
     const data = await res.json();
-    
+
     if (data.success) {
       cart = [];
       saveCart();
       updateCartUI();
+      updateAddButtons();
       toggleCart(false);
-      
-      // Redirect to HelloAsso for payment
+
       window.open(HELLOASSO_URL, '_blank');
-      alert('Commande #' + data.order_id + ' créée ! Total : ' + data.total + ' €\n\nPaiement via HelloAsso dans un nouvel onglet.\nRetrait au dojo après confirmation de paiement.');
+      alert('Commande #' + data.order_id + ' créée ! Total : ' + data.total.toFixed(2) + ' €\n\nPaiement via HelloAsso dans un nouvel onglet.\nRetrait au dojo après confirmation de paiement.');
     } else {
       alert('Erreur : ' + (data.error || 'Impossible de créer la commande'));
     }
   } catch (err) {
     alert('Erreur réseau : ' + err.message);
   }
-  
+
   btn.disabled = false;
   btn.textContent = 'Commander via HelloAsso';
 });
