@@ -182,9 +182,11 @@ function productCard(p) {
   ).join('');
 
   const hasVars = p.variations && p.variations.length > 0;
-  const priceDisplay = p.price_range
-    ? `${p.price_range.min} – ${p.price_range.max} €`
-    : `${p.price} €`;
+  
+  const defaultPrice = hasVars && p.variations.length > 0
+    ? (p.variations.find(v => v.in_stock)?.price ?? p.variations[0].price)
+    : p.price;
+  const priceDisplay = `${defaultPrice} €`;
 
   
   let sizeHtml = '';
@@ -236,7 +238,7 @@ function productCard(p) {
 
 function stockLabel(qty) {
   if (qty === null) return 'En stock';
-  if (qty === 0) return 'Épuisé';
+  if (qty === 0) return 'Sur commande';
   if (qty <= 5) return `Plus que ${qty}`;
   return 'En stock';
 }
@@ -259,7 +261,6 @@ function onSizeChange(productId, variationId) {
     const priceEl = card.querySelector('.product__price');
     if (priceEl) priceEl.textContent = v.price + ' €';
   }
-
   
   updateAddButtons();
 }
@@ -282,8 +283,8 @@ function addToCart(productId) {
     let price = p.price;
     if (hasVars && variationId) {
       const v = p.variations.find(x => x.id === variationId);
-      if (!v || (v.stock === 0 && !v.in_stock)) {
-        alert('Cette taille est épuisée.');
+      if (!v) {
+        alert('Veuillez choisir une taille.');
         return;
       }
       sizeName = v.attributes[0]?.name || '';
@@ -344,14 +345,15 @@ function updateAddButtons() {
     const hasVars = p.variations && p.variations.length > 0;
 
     
+    let isSurCommande = false;
     if (hasVars) {
       const vid = selectedSize[p.id];
       const v = p.variations.find(x => x.id === vid);
-      if (v && v.stock === 0 && !v.in_stock) {
-        btn.disabled = true;
-        btn.textContent = 'Épuisé';
-        return;
+      if (v && v.stock === 0) {
+        isSurCommande = true;
       }
+    } else if (p.stock === 0) {
+      isSurCommande = true;
     }
 
     btn.disabled = false;
@@ -366,7 +368,7 @@ function updateAddButtons() {
       }
     });
 
-    btn.textContent = cartQty > 0 ? `✓ Dans le panier (${cartQty})` : '🛒 Ajouter au panier';
+    btn.textContent = cartQty > 0 ? `✓ Dans le panier (${cartQty})` : (isSurCommande ? '📋 Sur commande' : '🛒 Ajouter au panier');
   });
 }
 
