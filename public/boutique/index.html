@@ -195,10 +195,9 @@ function productCard(p) {
     const options = p.variations.map(v => {
       const sizeName = v.attributes[0]?.name || '';
       const stockInfo = v.stock !== null
-        ? (v.stock === 0 ? ' — épuisé' : v.stock <= 5 ? ` — plus que ${v.stock}` : '')
+        ? (v.stock === 0 ? ' — Sur commande' : v.stock <= 5 ? ` — plus que ${v.stock}` : '')
         : '';
-      const disabled = !v.in_stock && v.stock === 0;
-      return `<option value="${v.id}" ${disabled ? 'disabled' : ''}>${sizeName}${stockInfo}${disabled ? ' ✗' : ''}</option>`;
+      return `<option value="${v.id}">${sizeName}${stockInfo}</option>`;
     }).join('');
     const firstInStock = p.variations.find(v => v.in_stock);
     const defaultStock = firstInStock ? firstInStock.stock : null;
