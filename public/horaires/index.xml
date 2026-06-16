@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Horaires et catégories on Judo Club Cattenom Rodemack</title>
-    <link>https://gaelc08.github.io/jccattenom-site/horaires/</link>
+    <link>https://judo-cattenom.fr/horaires/</link>
     <description>Recent content in Horaires et catégories on Judo Club Cattenom Rodemack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <atom:link href="https://gaelc08.github.io/jccattenom-site/horaires/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://judo-cattenom.fr/horaires/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
