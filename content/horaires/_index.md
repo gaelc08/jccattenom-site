@@ -8,16 +8,12 @@ Les cours se déroulent à la **Maison des Arts Martiaux, 3 Rue Saint Exupéry, 
 
 | Catégorie | Âge | Jours | Horaires |
 |-----------|-----|-------|----------|
-| Baby Judo | 4-5 ans | À confirmer | À confirmer |
-| Mini-poussins / Poussins | 6-9 ans | À confirmer | À confirmer |
-| Benjamins / Minimes | 10-13 ans | À confirmer | À confirmer |
-| Cadets / Juniors / Séniors | 14 ans et + | À confirmer | À confirmer |
-| Taïso | Adultes | À confirmer | À confirmer |
-| Iaïdo | Adultes | À confirmer | À confirmer |
-
-> Les horaires définitifs de la saison 2026-2027 seront publiés prochainement. Téléchargez le planning complet de la saison précédente ci-dessous en attendant.
-
-[📄 Télécharger les horaires 2025-2026 (PDF)](https://judo-cattenom.fr/wp-content/uploads/2025/09/horaires.pdf)
+| Baby Judo | 3-5 ans | Lundi, Mardi, Samedi | 17h15 – 18h15 |
+| Mini-poussins / Poussins | 6-9 ans | Lundi, Mardi, Samedi | 18h15 – 19h45 |
+| Benjamins / Minimes | 10-13 ans | Lundi, Mardi | 19h30 – 21h15 |
+| Cadets / Juniors / Séniors | 14 ans et + | Mercredi, Jeudi | 20h30–22h / 16h30–19h30 |
+| Iaïdo | Adultes | Lundi, Jeudi, Samedi | 19h45–21h15 / 19h30–22h / 11h–12h |
+| Taïso | Adultes | Dimanche | 9h30 – 11h |
 
 ---
 
