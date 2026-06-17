@@ -22,9 +22,9 @@ title: "Tarifs"
 
 * Iaïdo : **145 €**
 
-* Taïso : **180 €**
+* Taïso : **140 €**
 
-  _Règlement en 3 fois : 60 + 60 + 60_
+  _Règlement en 3 fois : 47 + 47 + 46_
 
 ## Pack famille
 
