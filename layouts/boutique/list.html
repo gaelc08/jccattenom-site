@@ -65,7 +65,7 @@
 
 <script>
 const API_URL = '/wp-json-shop.php';
-const HELLOASSO_URL = 'https://www.helloasso.com/associations/judo-club-cattenom-rodemack/adhesions/adhesion-2026-2027-sport';
+const HELLOASSO_URL = 'https://www.helloasso.com/beta/associations/judo-club-cattenom-rodemack/adhesions/adhesion-2026-2027-sport';
 
 // Cart: [{ productId, variationId, name, size, qty, price }]
 let cart = JSON.parse(localStorage.getItem('jcc_cart') || '[]');
@@ -391,8 +391,14 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
       updateAddButtons();
       toggleCart(false);
 
-      window.open(HELLOASSO_URL, '_blank');
-      alert('Commande #' + data.order_id + ' créée ! Total : ' + data.total.toFixed(2) + ' €\n\nPaiement via HelloAsso dans un nouvel onglet.\nRetrait au dojo après confirmation de paiement.');
+      // Build summary
+      const items = data.items.map(i => '• ' + i.name + ' ×' + i.qty + ' — ' + i.subtotal + ' €').join('\n');
+      const msg = 'Commande #' + data.order_id + '\n' + items + '\n\nTotal : ' + data.total.toFixed(2) + ' €\n\nVous allez être redirigé vers HelloAsso pour le paiement.';
+
+      // Redirect directly (no alert = no popup blocker)
+      if (confirm(msg)) {
+        window.location.href = HELLOASSO_URL;
+      }
     } else {
       alert('Erreur : ' + (data.error || 'Impossible de créer la commande'));
     }
