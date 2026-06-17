@@ -6,25 +6,27 @@ title: "Tarifs"
 
 * Baby judo : **130 €**
 
-  _Règlement en 3 fois : 50 + 50 + 30_
+  _Règlement en 3 fois : 44 € × 3_
 
 * Mini-poussins et poussins : **180 €**
 
-  _Règlement en 3 fois : 60 + 60 + 60_
+  _Règlement en 3 fois : 60 € × 3_
 
 * Benjamins et minimes : **200 €**
 
-  _Règlement en 3 fois : 70 + 70 + 60_
+  _Règlement en 3 fois : 67 € × 3_
 
 * Cadets, juniors, séniors et vétérans : **210 €**
 
-  _Règlement en 3 fois : 70 + 70 + 70_
+  _Règlement en 3 fois : 70 € × 3_
 
 * Iaïdo : **145 €**
 
+  _Règlement en 3 fois : 49 € × 3_
+
 * Taïso : **140 €**
 
-  _Règlement en 3 fois : 47 + 47 + 46_
+  _Règlement en 3 fois : 47 € × 3_
 
 ## Pack famille
 
