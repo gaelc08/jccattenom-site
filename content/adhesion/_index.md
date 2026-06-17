@@ -6,10 +6,14 @@ title: "Adhésion 2026-2027"
 
 Rejoignez le Judo Club Cattenom Rodemack pour la saison **2026-2027** !
 
-Complétez votre adhésion directement en ligne de manière simple et sécurisée via notre partenaire **HelloAsso**.
+### 🥋 3 séances d'essai offertes !
+
+ Venez essayer **3 cours gratuitement** avant de vous inscrire. Aucun engagement, venez avec votre éducation physique ou tenue de sport.
+
+Complétez ensuite votre adhésion directement en ligne de manière simple et sécurisée via notre partenaire **HelloAsso**.
 
 <div style="margin: 2rem 0;">
-  <a href="https://www.helloasso.com/associations/judo-club-cattenom-rodemack" target="_blank" rel="noopener noreferrer"
+  <a href="https://www.helloasso.com/beta/associations/judo-club-cattenom-rodemack/adhesions/adhesion-2026-2027-sport" target="_blank" rel="noopener noreferrer"
      style="display:inline-block; background:#e2b13c; color:#1a1a1a; font-weight:700; padding:0.875rem 1.75rem; border-radius:6px; text-decoration:none; font-size:1.05rem;">
     🥋 S'inscrire via HelloAsso
   </a>
