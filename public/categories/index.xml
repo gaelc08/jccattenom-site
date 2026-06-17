@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Judo Club Cattenom Rodemack</title>
-    <link>https://judo-cattenom.fr/categories/</link>
+    <link>https://gaelc08.github.io/jccattenom-site/categories/</link>
     <description>Recent content in Categories on Judo Club Cattenom Rodemack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <atom:link href="https://judo-cattenom.fr/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gaelc08.github.io/jccattenom-site/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

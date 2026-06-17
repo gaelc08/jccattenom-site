@@ -10,34 +10,30 @@ defaultContentLanguage = 'fr'
   accent = '#e2b13c'
   phone = '+33 6 XX XX XX XX'
   email = 'contact@judo-cattenom.fr'
-  dojo = 'Gymnase de Cattenom, 57570 Cattenom'
+  dojo = 'Maison des Arts Martiaux, 57570 Cattenom'
   founded = '1973'
 
 [menu]
   [[menu.main]]
-    name = 'Le Club'
-    url = '/'
+    name = 'Disciplines'
+    url = '/#disciplines'
     weight = 1
   [[menu.main]]
     name = 'Horaires'
-    url = '/horaires/'
+    url = '/#horaires'
     weight = 2
   [[menu.main]]
     name = 'Tarifs'
-    url = '/tarifs/'
+    url = '/#tarifs'
     weight = 3
   [[menu.main]]
     name = 'Boutique'
-    url = '/boutique/'
+    url = '/#boutique'
     weight = 4
   [[menu.main]]
-    name = 'Adhésion'
-    url = '/adhesion/'
-    weight = 5
-  [[menu.main]]
     name = 'Contact'
-    url = '/contact/'
-    weight = 6
+    url = '/#contact'
+    weight = 5
 
 [markup.goldmark.renderer]
   unsafe = true

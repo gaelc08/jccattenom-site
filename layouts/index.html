@@ -1,7 +1,7 @@
 {{ define "main" }}
 
-<!-- Hero -->
-<section class="hero">
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="accueil">
   <div class="hero__bg"></div>
   <div class="hero__content">
     <div class="hero__badge reveal">Depuis {{ .Site.Params.founded }}</div>
@@ -10,21 +10,21 @@
       <span class="hero__accent">Cattenom Rodemack</span>
     </h1>
     <p class="hero__subtitle reveal">
-      Judo · Taïso · Iaïdo — Club familial ouverte à tous, de 3 à 99 ans.
+      Judo · Taïso · Iaïdo — Club familial ouvert à tous, de 3 à 99 ans.<br>
       Pratiquants loisir et compétiteurs jusqu'au niveau national et international.
     </p>
     <div class="hero__actions reveal">
-      <a href="{{ "adhesion/" | relURL }}" class="btn btn--primary">S'inscrire pour 2026-2027</a>
-      <a href="{{ "contact/" | relURL }}" class="btn btn--ghost">Nous contacter</a>
+      <a href="#adhesion" class="btn btn--primary">S'inscrire</a>
+      <a href="#disciplines" class="btn btn--ghost">Découvrir</a>
     </div>
   </div>
   <div class="hero__scroll" aria-hidden="true">
-    <span>Découvrir</span>
+    <span>Défiler</span>
     <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 0v20m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="1.5"/></svg>
   </div>
 </section>
 
-<!-- Stats -->
+<!-- ═══ STATS ═══ -->
 <section class="stats reveal">
   <div class="container stats__grid">
     <div class="stat">
@@ -46,8 +46,8 @@
   </div>
 </section>
 
-<!-- Disciplines -->
-<section class="disciplines">
+<!-- ═══ DISCIPLINES ═══ -->
+<section class="disciplines" id="disciplines">
   <div class="container">
     <div class="section-head reveal">
       <span class="section-tag">Nos disciplines</span>
@@ -108,8 +108,8 @@
   </div>
 </section>
 
-<!-- About / Club -->
-<section class="about">
+<!-- ═══ LE CLUB ═══ -->
+<section class="about" id="club">
   <div class="container about__grid">
     <div class="reveal">
       <span class="section-tag">Le club</span>
@@ -139,14 +139,175 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta reveal">
+<!-- ═══ HORAIRES ═══ -->
+<section class="section-flat" id="horaires">
   <div class="container">
-    <h2>Prêt à rejoindre le dojo ?</h2>
-    <p>Essai gratuit pour les nouveaux venus. Inscription en ligne en quelques minutes via HelloAsso.</p>
-    <div class="cta__actions">
-      <a href="{{ "adhesion/" | relURL }}" class="btn btn--primary">S'inscrire maintenant</a>
-      <a href="{{ "tarifs/" | relURL }}" class="btn btn--ghost">Voir les tarifs</a>
+    <div class="section-head reveal">
+      <span class="section-tag">Saison 2025-2026</span>
+      <h2>Horaires</h2>
+    </div>
+    <div class="schedule-hero reveal">
+      <p>Retrouvez le planning complet de la saison 2025-2026 avec tous les créneaux, catégories et lieux d'entraînement dans le document officiel.</p>
+      <div class="schedule-hero__actions">
+        <a href="https://judo-cattenom.fr/wp-content/uploads/2025/09/horaires.pdf" target="_blank" class="btn btn--primary btn--lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:inline;vertical-align:middle;margin-right:8px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Télécharger les horaires (PDF)
+        </a>
+      </div>
+      <div class="schedule-info reveal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Tous les cours ont lieu à la <strong>Maison des Arts Martiaux</strong>, rue de l'Alzing, 57570 Cattenom</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TARIFS ═══ -->
+<section class="section-flat section-flat--alt" id="tarifs">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Cotisations</span>
+      <h2>Tarifs</h2>
+      <p>Saison 2025-2026 — Règlement possible en 3 fois (montants identiques)</p>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="price-card">
+        <div class="price-card__header">
+          <span class="price-card__cat">Baby Judo</span>
+          <span class="price-card__age">3-5 ans</span>
+        </div>
+        <div class="price-card__amount">130&thinsp;€</div>
+        <div class="price-card__split">3 × 44 €</div>
+      </div>
+      <div class="price-card">
+        <div class="price-card__header">
+          <span class="price-card__cat">Mini-poussins / Poussins</span>
+          <span class="price-card__age">6-9 ans</span>
+        </div>
+        <div class="price-card__amount">180&thinsp;€</div>
+        <div class="price-card__split">3 × 60 €</div>
+      </div>
+      <div class="price-card">
+        <div class="price-card__header">
+          <span class="price-card__cat">Benjamins / Minimes</span>
+          <span class="price-card__age">10-13 ans</span>
+        </div>
+        <div class="price-card__amount">200&thinsp;€</div>
+        <div class="price-card__split">3 × 67 €</div>
+      </div>
+      <div class="price-card">
+        <div class="price-card__header">
+          <span class="price-card__cat">Cadets → Vétérans</span>
+          <span class="price-card__age">14+ ans</span>
+        </div>
+        <div class="price-card__amount">210&thinsp;€</div>
+        <div class="price-card__split">3 × 70 €</div>
+      </div>
+      <div class="price-card price-card--accent">
+        <div class="price-card__header">
+          <span class="price-card__cat">Iaïdo</span>
+          <span class="price-card__age">Adultes</span>
+        </div>
+        <div class="price-card__amount">145&thinsp;€</div>
+        <div class="price-card__split">3 × 49 €</div>
+      </div>
+      <div class="price-card price-card--accent">
+        <div class="price-card__header">
+          <span class="price-card__cat">Taïso</span>
+          <span class="price-card__age">Adultes</span>
+        </div>
+        <div class="price-card__amount">140&thinsp;€</div>
+        <div class="price-card__split">3 × 47 €</div>
+      </div>
+    </div>
+    <div class="family-pack reveal">
+      <div class="family-pack__inner">
+        <strong>Pack famille</strong>
+        <p><strong>10 € de réduction</strong> par licence supplémentaire, à partir de 2 licences dans la même famille (fratrie ou parent-enfant).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOUTIQUE ═══ -->
+<section class="section-flat" id="boutique">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Équipement</span>
+      <h2>Boutique du club</h2>
+      <p>Vêtements et accessoires aux couleurs du Judo Club Cattenom Rodemack</p>
+    </div>
+    <div class="shop-cta reveal">
+      <div class="shop-cta__text">
+        <h3>Vêtements pour toute la famille</h3>
+        <p>Hoodies, vestes, t-shirts, casquettes et plus — aux couleurs du club. Commandez en ligne, retirez au dojo.</p>
+        <ul>
+          <li>Retrait gratuit au dojo</li>
+          <li>Paiement via HelloAsso</li>
+          <li>Sizes du 3 ans au 4XL adulte</li>
+        </ul>
+      </div>
+      <a href="{{ "boutique/" | relURL }}" class="btn btn--primary">Voir la boutique</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ADHESION ═══ -->
+<section class="adhesion" id="adhesion">
+  <div class="container">
+    <div class="adhesion__content reveal">
+      <span class="section-tag section-tag--light">S'inscrire</span>
+      <h2>Adhésion 2026-2027</h2>
+      <p>Rejoignez le Judo Club Cattenom Rodemack ! Complétez votre adhésion directement en ligne, de manière simple et sécurisée, via notre partenaire HelloAsso.</p>
+      <div class="adhesion__steps">
+        <div class="adhesion__step">
+          <span class="adhesion__step-num">1</span>
+          <span>Essai gratuit — venez essayer un cours</span>
+        </div>
+        <div class="adhesion__step">
+          <span class="adhesion__step-num">2</span>
+          <span>Inscription en ligne via HelloAsso</span>
+        </div>
+        <div class="adhesion__step">
+          <span class="adhesion__step-num">3</span>
+          <span>Certificat médical (ou attestation)</span>
+        </div>
+      </div>
+      <div class="adhesion__actions">
+        <a href="https://www.helloasso.com/associations/judo-club-cattenom-rodemack" target="_blank" class="btn btn--primary btn--lg">S'inscrire en ligne</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Contact</span>
+      <h2>Nous trouver</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-card">
+        <svg class="contact-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <h3>Adresse</h3>
+        <p>Maison des Arts Martiaux<br>Rue de l'Alzing<br>57570 Cattenom</p>
+        <a href="https://maps.google.com/?q=Maison+des+Arts+Martiaux+Cattenom" target="_blank">Voir sur Google Maps</a>
+      </div>
+      <div class="contact-card">
+        <svg class="contact-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <h3>Email</h3>
+        <a href="mailto:contact@judo-cattenom.fr">contact@judo-cattenom.fr</a>
+      </div>
+      <div class="contact-card">
+        <svg class="contact-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <h3>Horaires d'ouverture</h3>
+        <p>Lundi au Samedi<br>selon planning des cours</p>
+        <a href="#horaires">Voir le planning</a>
+      </div>
+    </div>
+    <div class="map-wrapper reveal">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=6.36%2C49.41%2C6.40%2C49.44&layer=mapnik&marker=49.425%2C6.38" frameborder="0" allowfullscreen loading="lazy" title="Localisation du club"></iframe>
     </div>
   </div>
 </section>

@@ -19,7 +19,7 @@
 <body>
   <a href="#main" class="skip-link">Aller au contenu</a>
 
-  <!-- ═══ NAV TOP (desktop + hide on mobile scroll) ═══ -->
+  <!-- ═══ NAV TOP ═══ -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="{{ "/" | relURL }}" class="nav__brand">
@@ -33,19 +33,19 @@
       <!-- Desktop links -->
       <div class="nav__links" id="nav-links">
         {{ range .Site.Menus.main }}
-        <a href="{{ .URL | relURL }}" class="nav__link{{ if $.IsMenuCurrent "main" . }} nav__link--active{{ end }}">{{ .Name }}</a>
+        <a href="{{ .URL }}" class="nav__link" data-section="{{ .URL | replaceRE ".*#" "" }}">{{ .Name }}</a>
         {{ end }}
-        <a href="{{ "adhesion/" | relURL }}" class="nav__cta">S'inscrire</a>
+        <a href="/#adhesion" class="nav__cta">S'inscrire</a>
       </div>
 
-      <!-- Mobile: hamburger for full drawer -->
+      <!-- Mobile: hamburger for drawer -->
       <button class="nav__toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- ═══ MOBILE DRAWER (slide-in) ═══ -->
+  <!-- ═══ DRAWER (mobile) ═══ -->
   <div class="drawer-overlay" id="drawer-overlay"></div>
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer__header">
@@ -62,14 +62,14 @@
     </div>
     <nav class="drawer__nav">
       {{ range .Site.Menus.main }}
-      <a href="{{ .URL | relURL }}" class="drawer__link{{ if $.IsMenuCurrent "main" . }} drawer__link--active{{ end }}">
+      <a href="{{ .URL }}" class="drawer__link" data-section="{{ .URL | replaceRE ".*#" "" }}">
         {{ .Name }}
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
       {{ end }}
     </nav>
     <div class="drawer__footer">
-      <a href="{{ "adhesion/" | relURL }}" class="drawer__cta">S'inscrire en ligne</a>
+      <a href="/#adhesion" class="drawer__cta" data-scroll-close>S'inscrire en ligne</a>
       <div class="drawer__contact">
         <p>Maison des arts martiaux<br>3 rue Saint-Exupéry, 57570 Cattenom</p>
         <a href="mailto:contact@judo-cattenom.fr">contact@judo-cattenom.fr</a>
@@ -77,28 +77,28 @@
     </div>
   </aside>
 
-  <!-- ═══ BOTTOM TAB BAR (mobile only) ═══ -->
-  <div class="bottom-bar" id="bottom-bar">
-    <a href="{{ "horaires/" | relURL }}" class="bottom-bar__item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+  <!-- ═══ BOTTOM TAB BAR (mobile) ═══ -->
+  <nav class="bottom-bar" id="bottom-bar">
+    <a href="/#horaires" class="bottom-bar__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       <span>Horaires</span>
     </a>
-    <a href="{{ "tarifs/" | relURL }}" class="bottom-bar__item">
+    <a href="/#tarifs" class="bottom-bar__item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
       <span>Tarifs</span>
     </a>
-    <a href="{{ "/" | relURL }}" class="bottom-bar__item bottom-bar__item--home">
+    <a href="{{ "/" | relURL }}" class="bottom-bar__item bottom-bar__item--home" aria-label="Accueil Judo Club Cattenom">
       <img src="{{ "images/logo.png" | relURL }}" alt="JCC">
     </a>
     <a href="{{ "boutique/" | relURL }}" class="bottom-bar__item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
       <span>Boutique</span>
     </a>
-    <a href="{{ "contact/" | relURL }}" class="bottom-bar__item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <a href="/#contact" class="bottom-bar__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72"/></svg>
       <span>Contact</span>
     </a>
-  </div>
+  </nav>
 
   <main id="main">
     {{ block "main" . }}{{ end }}
@@ -118,8 +118,9 @@
         <div class="footer__col">
           <h4>Navigation</h4>
           {{ range .Site.Menus.main }}
-          <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+          <a href="{{ .URL }}">{{ .Name }}</a>
           {{ end }}
+          <a href="/#adhesion">S'inscrire</a>
         </div>
         <div class="footer__col">
           <h4>Contact</h4>
@@ -163,39 +164,70 @@
     });
     overlay?.addEventListener('click', closeDrawer);
     drawerClose?.addEventListener('click', closeDrawer);
-    drawer?.querySelectorAll('.drawer__link, .drawer__cta').forEach(a =>
+    drawer?.querySelectorAll('a').forEach(a =>
       a.addEventListener('click', closeDrawer)
     );
 
-    // ── Nav scroll effect ──
+    // ── Nav scroll + hide ──
     const nav = document.getElementById('nav');
-    let lastScroll = 0;
     const bottomBar = document.getElementById('bottom-bar');
+    let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-
-      // Navbar glass effect
       nav.classList.toggle('scrolled', y > 50);
 
-      // Hide top nav on scroll down (mobile), show on scroll up
       if (window.innerWidth <= 768) {
-        if (y > lastScroll && y > 120) {
-          nav.classList.add('nav--hidden');
-        } else {
-          nav.classList.remove('nav--hidden');
-        }
+        nav.classList.toggle('nav--hidden', y > lastScroll && y > 120);
       }
 
-      // Bottom bar: hide at very top, show after hero
-      if (y > 80) {
-        bottomBar.classList.add('bottom-bar--visible');
-      } else {
-        bottomBar.classList.remove('bottom-bar--visible');
-      }
-
+      bottomBar.classList.toggle('bottom-bar--visible', y > 80);
       lastScroll = y;
     }, { passive: true });
+
+    // ── Scroll-spy: highlight active section in nav ──
+    const navLinks = document.querySelectorAll('.nav__link, .drawer__link');
+    const sections = Array.from(navLinks).map(link => {
+      const id = link.dataset.section;
+      return id ? { el: document.getElementById(id), link } : null;
+    }).filter(Boolean);
+
+    if (sections.length > 0 && 'IntersectionObserver' in window) {
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(l => l.classList.remove('nav__link--active', 'drawer__link--active'));
+            sections.forEach(s => {
+              if (s.el === entry.target) {
+                s.link.classList.add(
+                  s.link.classList.contains('drawer__link') ? 'drawer__link--active' : 'nav__link--active'
+                );
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+      sections.forEach(s => spy.observe(s.el));
+    }
+
+    // ── Smooth scroll to anchors ──
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href*="#"]');
+      if (!a) return;
+      const href = a.getAttribute('href');
+      if (!href || href === '#') return;
+      const hash = href.split('#').pop();
+      if (!hash) return;
+      const target = document.getElementById(hash);
+      if (!target) return;
+      e.preventDefault();
+      const offset = 80;
+      const y = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      // Update URL without jump
+      history.pushState(null, '', '#' + hash);
+    });
 
     // ── Scroll reveals ──
     const observer = new IntersectionObserver((entries) => {
