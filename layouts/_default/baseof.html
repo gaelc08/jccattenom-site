@@ -33,7 +33,7 @@
       <!-- Desktop links -->
       <div class="nav__links" id="nav-links">
         {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}" class="nav__link" data-section="{{ .URL | replaceRE ".*#" "" }}">{{ .Name }}</a>
+        <a href="{{ .URL }}" class="nav__link"{{ if hasPrefix .URL "/#" }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}>{{ .Name }}</a>
         {{ end }}
         <a href="/#adhesion" class="nav__cta">S'inscrire</a>
       </div>
@@ -62,7 +62,7 @@
     </div>
     <nav class="drawer__nav">
       {{ range .Site.Menus.main }}
-      <a href="{{ .URL }}" class="drawer__link" data-section="{{ .URL | replaceRE ".*#" "" }}">
+      <a href="{{ .URL }}" class="drawer__link"{{ if hasPrefix .URL "/#" }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}>
         {{ .Name }}
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
