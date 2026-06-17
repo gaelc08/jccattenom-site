@@ -190,7 +190,7 @@
     const sections = Array.from(navLinks).map(link => {
       const id = link.dataset.section;
       return id ? { el: document.getElementById(id), link } : null;
-    }).filter(Boolean);
+    }).filter(s => s && s.el);
 
     if (sections.length > 0 && 'IntersectionObserver' in window) {
       const spy = new IntersectionObserver((entries) => {
