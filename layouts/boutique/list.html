@@ -14,7 +14,7 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
       <div>
         <strong>Comment commander ?</strong>
-        <span>Ajoutez vos articles au panier, puis payez en ligne via HelloAsso. Le <strong>retrait se fait au dojo</strong> : Maison des arts martiaux, 3 rue Saint-Exupéry, 57570 Cattenom.</span>
+        <span>Ajoutez vos articles au panier, puis payez en ligne (carte bancaire). Le <strong>retrait se fait au dojo</strong> : Maison des arts martiaux, 3 rue Saint-Exupéry, 57570 Cattenom.</span>
       </div>
     </div>
 
@@ -49,7 +49,7 @@
             <input type="text" id="customer-name" placeholder="Votre nom" required>
             <input type="email" id="customer-email" placeholder="Votre email" required>
             <input type="tel" id="customer-phone" placeholder="Téléphone (optionnel)">
-            <button type="submit" class="btn btn--primary" style="width:100%">Commander via HelloAsso</button>
+            <button type="submit" class="btn btn--primary" style="width:100%">Commander</button>
           </form>
         </div>
       </div>
@@ -65,7 +65,6 @@
 
 <script>
 const API_URL = '/wp-json-shop.php';
-const HELLOASSO_URL = 'https://www.helloasso.com/associations/judo-club-cattenom-rodemack/adhesions/adhesion-2026-2027-sport';
 
 // Cart: [{ productId, variationId, name, size, qty, price }]
 let cart = JSON.parse(localStorage.getItem('jcc_cart') || '[]');
@@ -373,7 +372,8 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
         items: cart.map(c => ({
           product_id: c.productId,
           variation_id: c.variationId,
-          qty: c.qty
+          qty: c.qty,
+          size: c.size || ''
         })),
         customer: {
           name: document.getElementById('customer-name').value,
@@ -391,13 +391,12 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
       updateAddButtons();
       toggleCart(false);
 
-      // Build summary
-      const items = data.items.map(i => '• ' + i.name + ' ×' + i.qty + ' — ' + i.subtotal + ' €').join('\n');
-      const msg = 'Commande #' + data.order_id + '\n' + items + '\n\nTotal : ' + data.total.toFixed(2) + ' €\n\nVous allez être redirigé vers HelloAsso pour le paiement.';
-
-      // Redirect directly (no alert = no popup blocker)
-      if (confirm(msg)) {
-        window.location.href = HELLOASSO_URL;
+      // Redirect to WooCommerce checkout
+      if (data.checkout_url) {
+        window.location.href = data.checkout_url;
+      } else {
+        alert('Articles ajoutés au panier. Vous allez être redirigé vers le paiement.');
+        window.location.href = '/commander/';
       }
     } else {
       alert('Erreur : ' + (data.error || 'Impossible de créer la commande'));
@@ -407,7 +406,7 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
   }
 
   btn.disabled = false;
-  btn.textContent = 'Commander via HelloAsso';
+  btn.textContent = 'Commander';
 });
 </script>
 {{ end }}
