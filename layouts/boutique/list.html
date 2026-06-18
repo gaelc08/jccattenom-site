@@ -358,55 +358,26 @@ function renderCartItems() {
 }
 
 // ─── Checkout ────────────────────────────────────────────────────────
-document.getElementById('checkout-form').addEventListener('submit', async (e) => {
+document.getElementById('checkout-form').addEventListener('submit', (e) => {
   e.preventDefault();
   const btn = e.target.querySelector('button');
   btn.disabled = true;
-  btn.textContent = 'Envoi en cours…';
+  btn.textContent = 'Redirection…';
 
-  try {
-    const res = await fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        items: cart.map(c => ({
-          product_id: c.productId,
-          variation_id: c.variationId,
-          qty: c.qty,
-          size: c.size || ''
-        })),
-        customer: {
-          name: document.getElementById('customer-name').value,
-          email: document.getElementById('customer-email').value,
-          phone: document.getElementById('customer-phone').value,
-        }
-      })
-    });
-    const data = await res.json();
+  // Build items string: "jcc_id:size:qty,jcc_id::qty"
+  const itemsStr = cart.map(c => {
+    const size = c.size || '';
+    return c.productId + ':' + size + ':' + c.qty;
+  }).join(',');
 
-    if (data.success) {
-      cart = [];
-      saveCart();
-      updateCartUI();
-      updateAddButtons();
-      toggleCart(false);
+  // Redirect to boutique-cart.php which adds to WC cart and redirects to /commander/
+  window.location.href = '/boutique-cart.php?items=' + encodeURIComponent(itemsStr);
 
-      // Redirect to WooCommerce checkout
-      if (data.checkout_url) {
-        window.location.href = data.checkout_url;
-      } else {
-        alert('Articles ajoutés au panier. Vous allez être redirigé vers le paiement.');
-        window.location.href = '/commander/';
-      }
-    } else {
-      alert('Erreur : ' + (data.error || 'Impossible de créer la commande'));
-    }
-  } catch (err) {
-    alert('Erreur réseau : ' + err.message);
-  }
-
-  btn.disabled = false;
-  btn.textContent = 'Commander';
+  // Reset button after a delay (page will navigate away)
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.textContent = 'Commander';
+  }, 3000);
 });
 </script>
 {{ end }}
