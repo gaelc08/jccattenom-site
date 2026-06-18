@@ -358,26 +358,51 @@ function renderCartItems() {
 }
 
 // ─── Checkout ────────────────────────────────────────────────────────
-document.getElementById('checkout-form').addEventListener('submit', (e) => {
+document.getElementById('checkout-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = e.target.querySelector('button');
   btn.disabled = true;
-  btn.textContent = 'Redirection…';
+  btn.textContent = 'Ajout au panier…';
 
-  // Build items string: "jcc_id:size:qty,jcc_id::qty"
-  const itemsStr = cart.map(c => {
-    const size = c.size || '';
-    return c.productId + ':' + size + ':' + c.qty;
-  }).join(',');
+  try {
+    // Add all items to WooCommerce cart via our REST endpoint
+    const res = await fetch('/wp-json/jcc/v1/cart/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        items: cart.map(c => {
+          // Find the WC variation ID from product data
+          let wcVarId = 0;
+          const prod = products.find(p => p.id === c.productId);
+          if (prod && c.variationId && prod.variations) {
+            const v = prod.variations.find(x => x.id === c.variationId);
+            if (v) wcVarId = v.wc_variation_id || 0;
+          }
+          return {
+            product_id: c.productId,
+            qty: c.qty,
+            size: c.size || '',
+            wc_variation_id: wcVarId,
+          };
+        })
+      })
+    });
+    const data = await res.json();
 
-  // Redirect to boutique-cart.php which adds to WC cart and redirects to /commander/
-  window.location.href = '/boutique-cart.php?items=' + encodeURIComponent(itemsStr);
-
-  // Reset button after a delay (page will navigate away)
-  setTimeout(() => {
+    if (data.success) {
+      cart = [];
+      saveCart();
+      window.location.href = data.checkout_url || '/commander/';
+    } else {
+      alert('Erreur : ' + (data.message || 'Impossible d\'ajouter au panier'));
+      btn.disabled = false;
+      btn.textContent = 'Commander';
+    }
+  } catch (err) {
+    alert('Erreur réseau : ' + err.message);
     btn.disabled = false;
     btn.textContent = 'Commander';
-  }, 3000);
+  }
 });
 </script>
 {{ end }}
