@@ -2,24 +2,44 @@
 title: "Adhésion 2026-2027"
 ---
 
-## Adhésion Saison 2026-2027
+## Pourquoi adhérer au Judo Club de Cattenom-Rodemack ?
 
-Rejoignez le Judo Club Cattenom Rodemack pour la saison **2026-2027** !
+Le Club a deux sections : **Iaïdo** et **Judo**.
+
+Vous pouvez adhérer à l'une ou l'autre des sections (ou les deux !). Ceci vous permettra de :
+
+* Pratiquer l'iaïdo
+* Pratiquer le judo en loisir ou en compétition et de bénéficier d'un suivi en compétition
 
 ### 🥋 3 séances d'essai offertes !
 
- Venez essayer **3 cours gratuitement** avant de vous inscrire. Aucun engagement, venez avec votre éducation physique ou tenue de sport.
+Venez essayer **3 cours gratuitement** avant de vous inscrire. Aucun engagement, venez avec votre éducation physique ou tenue de sport.
 
-Complétez ensuite votre adhésion directement en ligne de manière simple et sécurisée via notre partenaire **HelloAsso**.
+---
 
-<div style="margin: 2rem 0;">
-  <a href="https://www.helloasso.com/associations/judo-club-cattenom-rodemack/adhesions/adhesion-2026-2027-sport" target="_blank" rel="noopener noreferrer"
-     style="display:inline-block; background:#e2b13c; color:#1a1a1a; font-weight:700; padding:0.875rem 1.75rem; border-radius:6px; text-decoration:none; font-size:1.05rem;">
-    🥋 S'inscrire via HelloAsso
-  </a>
+## Inscription en ligne
+
+<div class="ha-widget-wrap">
+  <iframe id="haWidget" allowtransparency="true" scrolling="auto"
+    src="https://www.helloasso.com/associations/judo-club-cattenom-rodemack/adhesions/adhesion-2026-2027-sport/widget?lang=fr"
+    onload="window.addEventListener('message', function(e) { const dataHeight = e.data.height; const el = document.getElementById('haWidget'); if (dataHeight > parseFloat(el.height || 0)) { el.height = dataHeight + 'px';}})">
+  </iframe>
 </div>
 
 > **Paiement sécurisé** — HelloAsso est un établissement de paiement agréé. Aucune commission prélevée sur votre adhésion.
+
+---
+
+## Conditions de l'adhésion
+
+### Documents à compléter et à fournir lors de votre inscription sur HelloAsso :
+
+* **Attestation** pour les adhérents majeurs ayant remis un certificat médical de moins de 3 ans
+* **Attestation** pour les mineurs
+* **Certificat médical**, le cas échéant
+
+> Tous les détails ainsi que les questionnaires santé et attestations sont disponibles sur le site de la fédération :
+> [https://www.ffjudo.com/actualite/licences-questionnaire-mineurs](https://www.ffjudo.com/actualite/licences-questionnaire-mineurs)
 
 ---
 
@@ -34,20 +54,27 @@ Les tarifs ci-dessous sont ceux de la saison en cours. En cas de doute, [contact
 * **Iaïdo** : **145 €** _(règlement en 3 fois : 49 € × 3)_
 * **Taïso** : **140 €** _(règlement en 3 fois : 47 € × 3)_
 
-### Pack famille
+---
 
-**10 € de réduction par licence supplémentaire**, à partir de 2 licences dans la même famille (fratrie ou parent-enfant).
+## Pass'Sport
 
-_Exemple : pour 3 licenciés au tarif "cadets" (210 €), le total est de 3 × 210 € − 2 × 10 € = **610 €**._
+Vous êtes bénéficiaire du Pass'Sport ?
+
+> ⚠️ Les règles d'éligibilité pour la saison 2026-27 ne sont pas encore connues.
+
+Voici les informations concernant le pass sport de la saison dernière : [https://www.sports.gouv.fr/le-pass-sport-reconduit-pour-la-saison-2025-2026-295](https://www.sports.gouv.fr/le-pass-sport-reconduit-pour-la-saison-2025-2026-295)
+
+Utilisez le code promo **PASSSPORT** lors de votre inscription sur HelloAsso, il vous donnera une réduction de **70 €**. Merci de nous procurer le justificatif directement au bureau du club suite à votre paiement.
 
 ---
 
-## Documents à fournir
+## Pack famille
 
-* Certificat médical de non contre-indication à la pratique du judo (ou questionnaire de santé FFJDA)
-* Justificatif d'identité
-* Photo d'identité
-* Règlement de la cotisation
+Vous avez plusieurs adhérents au sein de votre famille ?
+
+À partir de **2 licenciés** dans votre famille (fratrie ou parent-enfant), utilisez le code promo **FAMILLE** lors de votre inscription sur HelloAsso, il vous donnera une réduction de **10 €** par licence.
+
+---
 
 ## Contact
 
