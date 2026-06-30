@@ -77,13 +77,8 @@ var JCC_AUTH = (function () {
       var redirectUrl = getCurrentUrl();
       sessionStorage.clear();
 
-      // GET-based logout (more reliable than POST across browsers)
-      var params = new URLSearchParams({
-        client_id: KC_CLIENT,
-        post_logout_redirect_uri: redirectUrl
-      });
-
-      window.location.href = KC_URL + '/realms/' + KC_REALM + '/protocol/openid-connect/logout?' + params.toString();
+      // GET-based logout with post_logout_redirect_uri (supports wildcard: https://judo-cattenom.fr/*)
+      window.location.href = KC_URL + '/realms/' + KC_REALM + '/protocol/openid-connect/logout?client_id=' + KC_CLIENT + '&post_logout_redirect_uri=' + encodeURIComponent(redirectUrl);
     },
 
     /**
@@ -146,7 +141,12 @@ var JCC_AUTH = (function () {
 
         if (!hasRole) {
           alert('Accès refusé : vous devez être membre du bureau pour accéder à cet espace.');
+          JCC_AUTH.updateUI();
+          return;
         }
+
+        // Update UI immediately after successful login
+        JCC_AUTH.updateUI();
 
         // Dispatch event so other scripts can react
         window.dispatchEvent(new CustomEvent('jcc-auth-changed', {
