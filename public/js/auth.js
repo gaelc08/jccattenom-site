@@ -74,32 +74,16 @@ var JCC_AUTH = (function () {
      * Logout: clear session and redirect to Keycloak logout
      */
     logout: function () {
-      var idToken = sessionStorage.getItem('jcc_id_token') || '';
       var redirectUrl = getCurrentUrl();
       sessionStorage.clear();
 
-      // Use a form POST for logout (more reliable than GET with long URLs)
-      var form = document.createElement('form');
-      form.method = 'POST';
-      form.action = KC_URL + '/realms/' + KC_REALM + '/protocol/openid-connect/logout';
-      form.style.display = 'none';
+      // GET-based logout (more reliable than POST across browsers)
+      var params = new URLSearchParams({
+        client_id: KC_CLIENT,
+        post_logout_redirect_uri: redirectUrl
+      });
 
-      function addField(name, value) {
-        var input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = name;
-        input.value = value;
-        form.appendChild(input);
-      }
-
-      addField('client_id', KC_CLIENT);
-      addField('post_logout_redirect_uri', redirectUrl);
-      if (idToken) {
-        addField('id_token_hint', idToken);
-      }
-
-      document.body.appendChild(form);
-      form.submit();
+      window.location.href = KC_URL + '/realms/' + KC_REALM + '/protocol/openid-connect/logout?' + params.toString();
     },
 
     /**
