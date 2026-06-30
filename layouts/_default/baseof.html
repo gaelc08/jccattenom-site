@@ -43,7 +43,7 @@
         <a href="https://gestion.judo-cattenom.fr" rel="noopener" class="nav__link nav__protected" data-jcc-auth="true">Gestion</a>
         <a href="https://judo-cattenom.fr/wp-login.php?action=openid-connect-login" class="nav__link nav__protected" data-jcc-auth="true">WP Admin</a>
         <!-- Login / Logout buttons -->
-        <span data-jcc-auth="false"><button onclick="JCC_AUTH.login('{{ "/espace-membre/" | absURL }}')" class="nav__auth-btn">Se connecter</button></span>
+        <span data-jcc-auth="false"><button onclick="JCC_AUTH.login('{{ "/espace-membre/" | absURL }}')" class="nav__auth-btn">Connexion SSO</button></span>
         <span data-jcc-auth="true" style="display:none">
           <a href="{{ "/espace-membre/" | relURL }}" class="nav__member">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
