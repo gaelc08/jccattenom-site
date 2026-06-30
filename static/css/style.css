@@ -1663,7 +1663,7 @@ ul { list-style: none; }
   align-items: start;
 }
 .adhesion__content {
-  text-align: left;
+  text-align: center;
 }
 .adhesion h2 {
   font-family: var(--font-head);
@@ -1682,18 +1682,22 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: center;
 }
 .adhesion__step {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   font-size: 0.95rem;
   color: var(--text);
+  width: 100%;
+  max-width: 400px;
 }
 .adhesion__step > div {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  text-align: left;
 }
 .adhesion__step-links {
   display: flex;
@@ -1727,6 +1731,7 @@ ul { list-style: none; }
 .adhesion__btn {
   margin-top: 28px;
   display: inline-block;
+  text-align: center;
 }
 .adhesion__widget-wrap {
   border-radius: var(--radius-lg);
