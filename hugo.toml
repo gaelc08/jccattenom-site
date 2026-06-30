@@ -45,6 +45,12 @@ defaultContentLanguage = 'fr'
     name = 'Contact'
     url = '/#contact'
     weight = 7
+  [[menu.main]]
+    name = 'Espace Membre'
+    url = '/espace-membre/'
+    weight = 8
+    [menu.main.params]
+      auth = true
 
 [markup.goldmark.renderer]
   unsafe = true

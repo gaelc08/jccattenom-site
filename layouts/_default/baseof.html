@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <script src="{{ "js/auth.js" | relURL }}" defer></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Aller au contenu</a>
@@ -35,8 +36,20 @@
       <!-- Desktop links -->
       <div class="nav__links" id="nav-links">
         {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}" class="{{ if .Params.cta }}nav__cta{{ else }}nav__link{{ end }}"{{ if and (not .Params.cta) (hasPrefix .URL "/#") }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}>{{ .Name }}</a>
+        <a href="{{ .URL }}" class="{{ if .Params.cta }}nav__cta{{ else }}nav__link{{ end }}"{{ if and (not .Params.cta) (hasPrefix .URL "/#") }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}{{ if .Params.auth }} data-jcc-auth="true" style="display:none"{{ end }}>{{ .Name }}</a>
         {{ end }}
+        <!-- Protected member links (shown when logged in) -->
+        <a href="https://gestion.judo-cattenom.fr" target="_blank" rel="noopener" class="nav__link nav__protected" data-jcc-auth="true">Gestion</a>
+        <a href="https://nextcloud.judo-cattenom.fr" target="_blank" rel="noopener" class="nav__link nav__protected" data-jcc-auth="true">Nextcloud</a>
+        <a href="https://judo-cattenom.fr/wp-admin" target="_blank" rel="noopener" class="nav__link nav__protected" data-jcc-auth="true">WP Admin</a>
+        <!-- Login / Logout buttons -->
+        <span data-jcc-auth="false"><button onclick="JCC_AUTH.login('{{ "/espace-membre/" | absURL }}')" class="nav__auth-btn">Se connecter</button></span>
+        <span data-jcc-auth="true" style="display:none">
+          <a href="{{ "/espace-membre/" | relURL }}" class="nav__member">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+            <span data-jcc-user style="max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span>
+          </a>
+        </span>
       </div>
 
       <!-- Mobile: hamburger for drawer -->
@@ -63,11 +76,17 @@
     </div>
     <nav class="drawer__nav">
       {{ range .Site.Menus.main }}
-      <a href="{{ .URL }}" class="{{ if .Params.cta }}drawer__cta{{ else }}drawer__link{{ end }}"{{ if and (not .Params.cta) (hasPrefix .URL "/#") }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}>
+      <a href="{{ .URL }}" class="{{ if .Params.cta }}drawer__cta{{ else }}drawer__link{{ end }}"{{ if and (not .Params.cta) (hasPrefix .URL "/#") }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}{{ if .Params.auth }} data-jcc-auth="true" style="display:none"{{ end }}>
         {{ .Name }}
         {{ if not .Params.cta }}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>{{ end }}
       </a>
       {{ end }}
+      <!-- Protected drawer links -->
+      <a href="https://gestion.judo-cattenom.fr" target="_blank" rel="noopener" class="drawer__link nav__protected" data-jcc-auth="true">Gestion</a>
+      <a href="https://nextcloud.judo-cattenom.fr" target="_blank" rel="noopener" class="drawer__link nav__protected" data-jcc-auth="true">Nextcloud</a>
+      <a href="https://judo-cattenom.fr/wp-admin" target="_blank" rel="noopener" class="drawer__link nav__protected" data-jcc-auth="true">WP Admin</a>
+      <!-- Logout button in drawer -->
+      <a href="#" onclick="JCC_AUTH.logout();return false" class="drawer__link nav__protected" data-jcc-auth="true" style="color:var(--text-dim);font-size:0.82rem">Se déconnecter</a>
     </nav>
     <div class="drawer__footer">
       <div class="drawer__contact">
