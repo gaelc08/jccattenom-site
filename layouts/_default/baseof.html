@@ -39,9 +39,9 @@
         <a href="{{ .URL }}" class="{{ if .Params.cta }}nav__cta{{ else }}nav__link{{ end }}"{{ if and (not .Params.cta) (hasPrefix .URL "/#") }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}{{ if .Params.auth }} data-jcc-auth="true" style="display:none"{{ end }}>{{ .Name }}</a>
         {{ end }}
         <!-- Protected member links (shown when logged in) -->
-        <a href="https://gestion.judo-cattenom.fr" target="_blank" rel="noopener" class="nav__link nav__protected" data-jcc-auth="true">Gestion</a>
-        <a href="https://nextcloud.judo-cattenom.fr" target="_blank" rel="noopener" class="nav__link nav__protected" data-jcc-auth="true">Nextcloud</a>
-        <a href="https://judo-cattenom.fr/wp-admin" target="_blank" rel="noopener" class="nav__link nav__protected" data-jcc-auth="true">WP Admin</a>
+        <a href="https://auth.judo-cattenom.fr/realms/jccattenom/protocol/openid-connect/auth?client_id=nextcloud&redirect_uri=https://nextcloud.judo-cattenom.fr&response_type=code&scope=openid+profile+email" class="nav__link nav__protected" data-jcc-auth="true">Nextcloud</a>
+        <a href="https://gestion.judo-cattenom.fr" rel="noopener" class="nav__link nav__protected" data-jcc-auth="true">Gestion</a>
+        <a href="https://judo-cattenom.fr/wp-admin" rel="noopener" class="nav__link nav__protected" data-jcc-auth="true">WP Admin</a>
         <!-- Login / Logout buttons -->
         <span data-jcc-auth="false"><button onclick="JCC_AUTH.login('{{ "/espace-membre/" | absURL }}')" class="nav__auth-btn">Se connecter</button></span>
         <span data-jcc-auth="true" style="display:none">
@@ -82,9 +82,9 @@
       </a>
       {{ end }}
       <!-- Protected drawer links -->
-      <a href="https://gestion.judo-cattenom.fr" target="_blank" rel="noopener" class="drawer__link nav__protected" data-jcc-auth="true">Gestion</a>
-      <a href="https://nextcloud.judo-cattenom.fr" target="_blank" rel="noopener" class="drawer__link nav__protected" data-jcc-auth="true">Nextcloud</a>
-      <a href="https://judo-cattenom.fr/wp-admin" target="_blank" rel="noopener" class="drawer__link nav__protected" data-jcc-auth="true">WP Admin</a>
+      <a href="https://auth.judo-cattenom.fr/realms/jccattenom/protocol/openid-connect/auth?client_id=nextcloud&redirect_uri=https://nextcloud.judo-cattenom.fr&response_type=code&scope=openid+profile+email" class="drawer__link nav__protected" data-jcc-auth="true">Nextcloud</a>
+      <a href="https://gestion.judo-cattenom.fr" rel="noopener" class="drawer__link nav__protected" data-jcc-auth="true">Gestion</a>
+      <a href="https://judo-cattenom.fr/wp-admin" rel="noopener" class="drawer__link nav__protected" data-jcc-auth="true">WP Admin</a>
       <!-- Logout button in drawer -->
       <a href="#" onclick="JCC_AUTH.logout();return false" class="drawer__link nav__protected" data-jcc-auth="true" style="color:var(--text-dim);font-size:0.82rem">Se déconnecter</a>
     </nav>

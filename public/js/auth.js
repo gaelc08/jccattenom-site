@@ -75,15 +75,31 @@ var JCC_AUTH = (function () {
      */
     logout: function () {
       var idToken = sessionStorage.getItem('jcc_id_token') || '';
+      var redirectUrl = getCurrentUrl();
       sessionStorage.clear();
-      var params = new URLSearchParams({
-        client_id: KC_CLIENT,
-        post_logout_redirect_uri: getCurrentUrl()
-      });
-      if (idToken) {
-        params.set('id_token_hint', idToken);
+
+      // Use a form POST for logout (more reliable than GET with long URLs)
+      var form = document.createElement('form');
+      form.method = 'POST';
+      form.action = KC_URL + '/realms/' + KC_REALM + '/protocol/openid-connect/logout';
+      form.style.display = 'none';
+
+      function addField(name, value) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        input.value = value;
+        form.appendChild(input);
       }
-      window.location.href = KC_URL + '/realms/' + KC_REALM + '/protocol/openid-connect/logout?' + params;
+
+      addField('client_id', KC_CLIENT);
+      addField('post_logout_redirect_uri', redirectUrl);
+      if (idToken) {
+        addField('id_token_hint', idToken);
+      }
+
+      document.body.appendChild(form);
+      form.submit();
     },
 
     /**
