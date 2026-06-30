@@ -1707,6 +1707,26 @@ ul { list-style: none; }
   margin-top: 28px;
   display: inline-block;
 }
+.adhesion__extra {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: rgba(226, 177, 60, 0.08);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent);
+}
+.adhesion__extra p {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.adhesion__extra p:last-child {
+  margin-bottom: 0;
+}
+.adhesion__extra a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 .adhesion__widget-wrap {
   border-radius: var(--radius-lg);
   overflow: hidden;
