@@ -1,0 +1,128 @@
+{
+  "club": "Judo Club Cattenom",
+  "timezone": "Europe/Paris",
+  "hidden_categories": ["iaido"],
+  "courses": [
+    {
+      "id": "baby-judo-g1",
+      "title": "Baby Judo (3-5 ans) – Groupe 1",
+      "days": ["SA"],
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "location": "Dojo de Cattenom",
+      "description": "Baby Judo 3-5 ans. Éveil moteur. Groupe 1.",
+      "color": "#ea4335",
+      "category": "baby",
+      "event_type": "course"
+    },
+    {
+      "id": "baby-judo-g2",
+      "title": "Baby Judo (3-5 ans) – Groupe 2",
+      "days": ["SA"],
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "location": "Dojo de Cattenom",
+      "description": "Baby Judo 3-5 ans. Éveil moteur. Groupe 2.",
+      "color": "#ea4335",
+      "category": "baby",
+      "event_type": "course"
+    },
+    {
+      "id": "mini-poussins-1",
+      "title": "Mini-poussins / Poussins 1 (6-8 ans)",
+      "days": ["TU", "FR"],
+      "startTime": "17:15",
+      "endTime": "18:15",
+      "location": "Dojo de Cattenom",
+      "description": "Mini-poussins / Poussins 1. 6-8 ans.",
+      "color": "#fbbc04",
+      "category": "enfants",
+      "event_type": "course"
+    },
+    {
+      "id": "poussins2-benjamins-minimes",
+      "title": "Poussins 2 / Benjamins / Minimes (9-13 ans)",
+      "days": ["TU", "FR"],
+      "startTime": "18:15",
+      "endTime": "19:45",
+      "location": "Dojo de Cattenom",
+      "description": "Poussins 2 / Benjamins / Minimes. 9-13 ans.",
+      "color": "#a855f7",
+      "category": "ados",
+      "event_type": "course"
+    },
+    {
+      "id": "cadets-juniors-seniors-tu",
+      "title": "Cadets / Juniors / Séniors (14 ans et +)",
+      "days": ["TU", "FR"],
+      "startTime": "19:45",
+      "endTime": "21:15",
+      "location": "Dojo de Cattenom",
+      "description": "Cadets / Juniors / Séniors. 14 ans et +.",
+      "color": "#1a73e8",
+      "category": "adultes",
+      "event_type": "course"
+    },
+    {
+      "id": "entrainement-libre",
+      "title": "Judo — Entraînement libre",
+      "days": ["WE"],
+      "startTime": "20:30",
+      "endTime": "22:00",
+      "location": "Dojo de Cattenom",
+      "description": "Entraînement libre.",
+      "color": "#22c55e",
+      "category": "adultes",
+      "event_type": "course"
+    },
+    {
+      "id": "iaido-lundi",
+      "title": "Iaïdo (Art du sabre)",
+      "days": ["MO"],
+      "startTime": "19:30",
+      "endTime": "21:15",
+      "location": "Dojo de Cattenom",
+      "description": "Iaïdo. Art du sabre.",
+      "color": "#f97316",
+      "category": "iaido",
+      "event_type": "course"
+    },
+    {
+      "id": "iaido-jeudi",
+      "title": "Iaïdo (Art du sabre)",
+      "days": ["TH"],
+      "startTime": "16:30",
+      "endTime": "19:30",
+      "location": "Dojo de Cattenom",
+      "description": "Iaïdo. Art du sabre.",
+      "color": "#f97316",
+      "category": "iaido",
+      "event_type": "course"
+    },
+    {
+      "id": "iaido-vendredi",
+      "title": "Iaïdo (Art du sabre)",
+      "days": ["FR"],
+      "startTime": "12:00",
+      "endTime": "14:00",
+      "location": "Dojo de Cattenom",
+      "description": "Iaïdo. Art du sabre.",
+      "color": "#f97316",
+      "category": "iaido",
+      "event_type": "course"
+    },
+    {
+      "id": "taiso",
+      "title": "Taïso (Préparation physique)",
+      "days": ["SU"],
+      "startTime": "09:30",
+      "endTime": "11:00",
+      "location": "Dojo de Cattenom",
+      "description": "Préparation physique adaptée au judo.",
+      "color": "#9c27b0",
+      "category": "taiso",
+      "event_type": "course"
+    }
+  ],
+  "events": []
+}

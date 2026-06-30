@@ -4,6 +4,7 @@
 <section class="hero" id="accueil">
   <div class="hero__bg"></div>
   <div class="hero__content">
+    <img src="{{ "images/logo.png" | relURL }}" alt="Judo Club Cattenom Rodemack" class="hero__logo reveal">
     <div class="hero__badge reveal">Depuis {{ .Site.Params.founded }}</div>
     <h1 class="hero__title reveal">
       Judo Club<br>
@@ -188,6 +189,9 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:inline;vertical-align:middle;margin-right:6px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
       Tous les cours ont lieu à la <strong>Maison des Arts Martiaux</strong>, 3 rue Saint-Exupéry, 57570 Cattenom
     </div>
+    <div class="schedule-footer reveal" style="margin-top:20px">
+      <a href="/calendrier/" class="btn btn--primary">Voir le calendrier</a>
+    </div>
 
   </div>
 </section>
@@ -259,6 +263,40 @@
   </div>
 </section>
 
+<!-- ═══ ADHESION ═══ -->
+<section class="adhesion" id="adhesion">
+  <div class="container">
+    <div class="adhesion__grid reveal">
+      <div class="adhesion__content">
+      <span class="section-tag section-tag--light">S'inscrire</span>
+      <h2>Adhésion 2026-2027</h2>
+      <p>Rejoignez le Judo Club Cattenom Rodemack ! Complétez votre adhésion directement en ligne, de manière simple et sécurisée, via notre partenaire HelloAsso.</p>
+      <div class="adhesion__steps">
+        <div class="adhesion__step">
+          <span class="adhesion__step-num">1</span>
+          <span>3 séances d'essai offertes</span>
+        </div>
+        <div class="adhesion__step">
+          <span class="adhesion__step-num">2</span>
+          <span>Inscription en ligne via HelloAsso</span>
+        </div>
+        <div class="adhesion__step">
+          <span class="adhesion__step-num">3</span>
+          <span>Certificat médical (ou attestation)</span>
+        </div>
+      </div>
+      </div>
+      <div class="adhesion__widget-wrap">
+      <iframe id="haWidget" allowtransparency="true" scrolling="auto"
+        src="https://www.helloasso.com/associations/judo-club-cattenom-rodemack/adhesions/adhesion-2026-2027-sport/widget?lang=fr"
+        style="width: 100%; height: 100%; min-height: 700px; border: none;"
+        onload="window.addEventListener('message', function(e) { var dataHeight = e.data.height; var el = document.getElementById('haWidget'); if (dataHeight > parseFloat(el.height || 0)) { el.height = dataHeight + 'px'; }})">
+      </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ BOUTIQUE ═══ -->
 <section class="section-flat" id="boutique">
   <div class="container">
@@ -278,40 +316,6 @@
         </ul>
       </div>
       <a href="{{ "boutique/" | relURL }}" class="btn btn--primary">Voir la boutique</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ ADHESION ═══ -->
-<section class="adhesion" id="adhesion">
-  <div class="container">
-    <div class="adhesion__content reveal">
-      <span class="section-tag section-tag--light">S'inscrire</span>
-      <h2>Adhésion 2026-2027</h2>
-      <p>Rejoignez le Judo Club Cattenom Rodemack ! Complétez votre adhésion directement en ligne, de manière simple et sécurisée, via notre partenaire HelloAsso.</p>
-      <div class="adhesion__steps">
-        <div class="adhesion__step">
-          <span class="adhesion__step-num">1</span>
-          <span>3 séances d'essai offertes</span>
-        </div>
-        <div class="adhesion__step">
-          <span class="adhesion__step-num">2</span>
-          <span>Inscription en ligne via HelloAsso</span>
-        </div>
-        <div class="adhesion__step">
-          <span class="adhesion__step-num">3</span>
-          <span>Certificat médical (ou attestation)</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="adhesion__widget-full">
-      <iframe id="haWidget" allowtransparency="true" scrolling="auto"
-        src="https://www.helloasso.com/associations/judo-club-cattenom-rodemack/adhesions/adhesion-2026-2027-sport/widget?lang=fr"
-        style="width: 100%; height: 750px; border: none;"
-        onload="window.addEventListener('message', function(e) { var dataHeight = e.data.height; var el = document.getElementById('haWidget'); if (dataHeight > parseFloat(el.height || 0)) { el.height = dataHeight + 'px'; }})">
-      </iframe>
     </div>
   </div>
 </section>

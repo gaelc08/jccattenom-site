@@ -28,17 +28,23 @@ defaultContentLanguage = 'fr'
     url = '/#tarifs'
     weight = 3
   [[menu.main]]
-    name = 'Adhésion'
-    url = '/adhesion/'
+    name = "S'inscrire"
+    url = '/#adhesion'
     weight = 4
+    [menu.main.params]
+      cta = true
   [[menu.main]]
     name = 'Boutique'
     url = '/#boutique'
     weight = 5
   [[menu.main]]
+    name = 'Calendrier'
+    url = '/calendrier'
+    weight = 6
+  [[menu.main]]
     name = 'Contact'
     url = '/#contact'
-    weight = 6
+    weight = 7
 
 [markup.goldmark.renderer]
   unsafe = true

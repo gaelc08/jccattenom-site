@@ -27,4 +27,4 @@ _Exemple : pour 3 licenciés au tarif "cadets" (210 €), le total est de 3 × 2
 
 Pour le paiement en 3 fois, le premier règlement est dû à l'inscription, les deux suivants à 30 et 60 jours.
 
-[🥋 S'inscrire maintenant](/adhesion/)
+[S'inscrire maintenant](/#adhesion)

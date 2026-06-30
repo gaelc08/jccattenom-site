@@ -359,7 +359,7 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
   e.preventDefault();
   const btn = e.target.querySelector('button');
   btn.disabled = true;
-  btn.textContent = 'Ajout au panier…';
+  btn.textContent = 'Paiement…';
 
   try {
     // Add all items to WooCommerce cart via our REST endpoint

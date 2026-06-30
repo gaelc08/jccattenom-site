@@ -1,0 +1,899 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Judo Club Cattenom//Calendar//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Judo Club Cattenom
+X-WR-TIMEZONE:Europe/Paris
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260615@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260615T170000
+DTEND:20260615T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260615@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260615T183000
+DTEND:20260615T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260616@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260616T200000
+DTEND:20260616T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260617@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260617T170000
+DTEND:20260617T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260617@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260617T183000
+DTEND:20260617T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260618@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260618T170000
+DTEND:20260618T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260618@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260618T180000
+DTEND:20260618T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260619@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260619T190000
+DTEND:20260619T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260622@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260622T170000
+DTEND:20260622T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260622@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260622T183000
+DTEND:20260622T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260623@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260623T200000
+DTEND:20260623T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260624@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260624T170000
+DTEND:20260624T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260624@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260624T183000
+DTEND:20260624T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260625@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260625T170000
+DTEND:20260625T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260625@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260625T180000
+DTEND:20260625T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260626@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260626T190000
+DTEND:20260626T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260629@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260629T170000
+DTEND:20260629T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260629@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260629T183000
+DTEND:20260629T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260630@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260630T200000
+DTEND:20260630T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260701@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260701T170000
+DTEND:20260701T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260701@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260701T183000
+DTEND:20260701T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260702@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260702T170000
+DTEND:20260702T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260702@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260702T180000
+DTEND:20260702T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260703@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260703T190000
+DTEND:20260703T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:stage-ete-2026@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260710
+SUMMARY:Stage d'été
+DESCRIPTION:Stage d'été ouvert à tous. Inscriptions au dojo.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260706@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260706T170000
+DTEND:20260706T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260706@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260706T183000
+DTEND:20260706T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260707@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260707T200000
+DTEND:20260707T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260708@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260708T170000
+DTEND:20260708T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260708@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260708T183000
+DTEND:20260708T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260709@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260709T170000
+DTEND:20260709T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260709@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260709T180000
+DTEND:20260709T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260710@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260710T190000
+DTEND:20260710T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260713@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260713T170000
+DTEND:20260713T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260713@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260713T183000
+DTEND:20260713T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260714@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260714T200000
+DTEND:20260714T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260715@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260715T170000
+DTEND:20260715T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260715@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260715T183000
+DTEND:20260715T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260716@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260716T170000
+DTEND:20260716T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260716@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260716T180000
+DTEND:20260716T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260717@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260717T190000
+DTEND:20260717T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260720@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260720T170000
+DTEND:20260720T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260720@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260720T183000
+DTEND:20260720T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260721@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260721T200000
+DTEND:20260721T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260722@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260722T170000
+DTEND:20260722T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260722@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260722T183000
+DTEND:20260722T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260723@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260723T170000
+DTEND:20260723T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260723@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260723T180000
+DTEND:20260723T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260724@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260724T190000
+DTEND:20260724T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260727@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260727T170000
+DTEND:20260727T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260727@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260727T183000
+DTEND:20260727T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260728@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260728T200000
+DTEND:20260728T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260729@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260729T170000
+DTEND:20260729T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260729@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260729T183000
+DTEND:20260729T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260730@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260730T170000
+DTEND:20260730T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260730@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260730T180000
+DTEND:20260730T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260731@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260731T190000
+DTEND:20260731T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260803@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260803T170000
+DTEND:20260803T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260803@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260803T183000
+DTEND:20260803T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260804@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260804T200000
+DTEND:20260804T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260805@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260805T170000
+DTEND:20260805T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260805@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260805T183000
+DTEND:20260805T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260806@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260806T170000
+DTEND:20260806T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260806@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260806T180000
+DTEND:20260806T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260807@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260807T190000
+DTEND:20260807T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260810@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260810T170000
+DTEND:20260810T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260810@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260810T183000
+DTEND:20260810T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260811@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260811T200000
+DTEND:20260811T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260812@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260812T170000
+DTEND:20260812T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260812@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260812T183000
+DTEND:20260812T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260813@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260813T170000
+DTEND:20260813T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260813@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260813T180000
+DTEND:20260813T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260814@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260814T190000
+DTEND:20260814T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260817@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260817T170000
+DTEND:20260817T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260817@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260817T183000
+DTEND:20260817T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260818@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260818T200000
+DTEND:20260818T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260819@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260819T170000
+DTEND:20260819T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260819@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260819T183000
+DTEND:20260819T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260820@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260820T170000
+DTEND:20260820T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260820@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260820T180000
+DTEND:20260820T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260821@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260821T190000
+DTEND:20260821T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260824@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260824T170000
+DTEND:20260824T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260824@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260824T183000
+DTEND:20260824T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260825@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260825T200000
+DTEND:20260825T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260826@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260826T170000
+DTEND:20260826T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260826@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260826T183000
+DTEND:20260826T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260827@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260827T170000
+DTEND:20260827T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260827@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260827T180000
+DTEND:20260827T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260828@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260828T190000
+DTEND:20260828T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260831@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260831T170000
+DTEND:20260831T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260831@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260831T183000
+DTEND:20260831T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:ju-jitsu-20260901@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260901T200000
+DTEND:20260901T213000
+SUMMARY:Ju-Jitsu
+DESCRIPTION:Cours de Ju-Jitsu. Self-défense.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-mercredi-20260902@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260902T170000
+DTEND:20260902T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-mercredi-20260902@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260902T183000
+DTEND:20260902T200000
+SUMMARY:Judo - Ados/Adultes
+DESCRIPTION:Entraînement judo ados et adultes.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:baby-judo-20260903@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260903T170000
+DTEND:20260903T174500
+SUMMARY:Baby Judo (3-5 ans)
+DESCRIPTION:Éveil corporel et initiation au judo pour les tout-petits.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:taiso-20260903@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260903T180000
+DTEND:20260903T190000
+SUMMARY:Taiso (Préparation physique)
+DESCRIPTION:Préparation physique adaptée au judo. Étirements, renforcement.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-vendredi-20260904@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260904T190000
+DTEND:20260904T203000
+SUMMARY:Judo - Compétiteurs
+DESCRIPTION:Entraînement spécifique compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-jeunes-lundi-20260907@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260907T170000
+DTEND:20260907T181500
+SUMMARY:Judo - Jeunes (6-12 ans)
+DESCRIPTION:Initiation judo pour les jeunes de 6 à 12 ans.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+BEGIN:VEVENT
+UID:judo-lundi-20260907@judo-cattenom.fr
+DTSTAMP:20260620T2110SZ
+DTSTART:20260907T183000
+DTEND:20260907T200000
+SUMMARY:Judo - Tous niveaux
+DESCRIPTION:Entraînement judo tous niveaux. Adultes et compétiteurs.
+LOCATION:Dojo - Salle polyvalente
+END:VEVENT
+END:VCALENDAR

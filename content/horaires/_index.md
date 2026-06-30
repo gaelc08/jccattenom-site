@@ -21,4 +21,4 @@ Les cours se déroulent à la **Maison des Arts Martiaux, 3 Rue Saint Exupéry, 
 
 Vous pouvez vous inscrire directement en ligne via **HelloAsso** ou prendre contact avec nous par email.
 
-[🥋 S'inscrire en ligne](/adhesion/) · [✉️ Nous contacter](/contact/)
+[S'inscrire en ligne](/#adhesion) · [Nous contacter](/contact/)

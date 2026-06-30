@@ -10,7 +10,9 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta name="theme-color" content="#0a0f1c">
-  <link rel="icon" href="{{ "images/logo.png" | relURL }}" type="image/png">
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="48x48">
+  <link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -33,9 +35,8 @@
       <!-- Desktop links -->
       <div class="nav__links" id="nav-links">
         {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}" class="nav__link"{{ if hasPrefix .URL "/#" }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}>{{ .Name }}</a>
+        <a href="{{ .URL }}" class="{{ if .Params.cta }}nav__cta{{ else }}nav__link{{ end }}"{{ if and (not .Params.cta) (hasPrefix .URL "/#") }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}>{{ .Name }}</a>
         {{ end }}
-        <a href="/#adhesion" class="nav__cta">S'inscrire</a>
       </div>
 
       <!-- Mobile: hamburger for drawer -->
@@ -62,14 +63,13 @@
     </div>
     <nav class="drawer__nav">
       {{ range .Site.Menus.main }}
-      <a href="{{ .URL }}" class="drawer__link"{{ if hasPrefix .URL "/#" }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}>
+      <a href="{{ .URL }}" class="{{ if .Params.cta }}drawer__cta{{ else }}drawer__link{{ end }}"{{ if and (not .Params.cta) (hasPrefix .URL "/#") }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}>
         {{ .Name }}
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        {{ if not .Params.cta }}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>{{ end }}
       </a>
       {{ end }}
     </nav>
     <div class="drawer__footer">
-      <a href="/#adhesion" class="drawer__cta" data-scroll-close>S'inscrire en ligne</a>
       <div class="drawer__contact">
         <p>Maison des arts martiaux<br>3 rue Saint-Exupéry, 57570 Cattenom</p>
         <a href="mailto:contact@judo-cattenom.fr">contact@judo-cattenom.fr</a>
@@ -120,7 +120,6 @@
           {{ range .Site.Menus.main }}
           <a href="{{ .URL }}">{{ .Name }}</a>
           {{ end }}
-          <a href="/#adhesion">S'inscrire</a>
         </div>
         <div class="footer__col">
           <h4>Contact</h4>
