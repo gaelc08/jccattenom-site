@@ -1685,10 +1685,31 @@ ul { list-style: none; }
 }
 .adhesion__step {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   font-size: 0.95rem;
   color: var(--text);
+}
+.adhesion__step > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.adhesion__step-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 4px;
+  font-size: 0.82rem;
+}
+.adhesion__step-links a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.adhesion__step-links a:hover {
+  opacity: 1;
 }
 .adhesion__step-num {
   display: flex;
@@ -1706,26 +1727,6 @@ ul { list-style: none; }
 .adhesion__btn {
   margin-top: 28px;
   display: inline-block;
-}
-.adhesion__extra {
-  margin-top: 20px;
-  padding: 16px 20px;
-  background: rgba(226, 177, 60, 0.08);
-  border-radius: var(--radius-md);
-  border-left: 3px solid var(--accent);
-}
-.adhesion__extra p {
-  margin: 0 0 6px;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-.adhesion__extra p:last-child {
-  margin-bottom: 0;
-}
-.adhesion__extra a {
-  color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 .adhesion__widget-wrap {
   border-radius: var(--radius-lg);
