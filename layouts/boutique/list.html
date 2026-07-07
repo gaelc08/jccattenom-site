@@ -46,6 +46,8 @@
             <span id="cart-total-price" class="cart__total-price">0 €</span>
           </div>
           <form id="checkout-form" class="cart__form">
+            <input type="text" id="customer-name" placeholder="Votre nom complet" required class="cart__input">
+            <input type="email" id="customer-email" placeholder="Votre email" required class="cart__input">
             <button type="submit" class="btn btn--primary" style="width:100%">Commander</button>
           </form>
         </div>
@@ -61,7 +63,33 @@
 </section>
 
 <script>
-const API_URL = '/wp-json-shop.php';
+// ─── API endpoint ────────────────────────────────────────────────────
+const API_URL = '/wp-json/jcc/v1/products';
+
+// Static product images (hosted on the server)
+const PRODUCT_IMAGES = {
+  'T-shirt Enfant': ['/boutique/images/tshirt_homme_front.jpeg', '/boutique/images/tshirt_homme_back.jpeg'],
+  'T-shirt Mixte Adulte': ['/boutique/images/tshirt_homme_front.jpeg', '/boutique/images/tshirt_homme_back.jpeg'],
+  'Hoodie Junior': ['/boutique/images/hoodies_homme_front.jpeg', '/boutique/images/hoodies_homme_back.jpeg'],
+  'Hoodie Femme': ['/boutique/images/hoodies_femme_front.jpeg', '/boutique/images/hoodies_femme_back.jpeg'],
+  'Hoodie Adulte': ['/boutique/images/hoodies_homme_front.jpeg', '/boutique/images/hoodies_homme_back.jpeg'],
+  'Polaire Femme': ['/boutique/images/polaire_femme_front.jpeg', '/boutique/images/polaire_femme_back.jpeg'],
+  'Veste Softshell': ['/boutique/images/veste_front.jpeg', '/boutique/images/veste_back.jpeg'],
+  'Sac de Sport 75L': ['/boutique/images/sac_sport.jpeg', '/boutique/images/sac_sport_details.jpeg'],
+  'Casquette Enfant': ['/boutique/images/casquette_1.jpeg', '/boutique/images/casquette_2.jpeg'],
+  'Casquette Adulte': ['/boutique/images/casquette_1.jpeg', '/boutique/images/casquette_2.jpeg'],
+};
+
+// Price overrides for products where WooCommerce returns 0€ (variable products w/o base price)
+const PRICE_OVERRIDES = {
+  'T-shirt Mixte Adulte': 10,
+  'Hoodie Adulte': 25,
+  'Hoodie Femme': 25,
+  'Polaire Femme': 35,
+};
+
+// Category order for grouping
+const CATEGORY_ORDER = ['T-shirts', 'Sweats', 'Vestes', 'Accessoires'];
 
 // Cart: [{ productId, variationId, name, size, qty, price }]
 let cart = JSON.parse(localStorage.getItem('jcc_cart') || '[]');
@@ -69,23 +97,84 @@ let products = [];
 // Track selected size per product
 const selectedSize = {};
 
+// ─── Transform WP API response → frontend format ────────────────────
+function transformProducts(data) {
+  return data.map(p => {
+    const price = PRICE_OVERRIDES[p.name] ?? p.price;
+    const hasSizes = p.sizes && p.sizes.length > 0;
+    let variations = [];
+    let attrs_meta = [];
+    if (hasSizes) {
+      attrs_meta = [{ label: 'Taille', options: p.sizes }];
+      variations = p.sizes.map((size, idx) => ({
+        id: -(p.id * 1000 + idx), // synthetic negative ID
+        price: price,
+        attributes: [{ name: size }],
+      }));
+    }
+    return {
+      id: p.id,
+      name: p.name,
+      description: p.description || '',
+      price: price,
+      category: p.category || '',
+      featured: false,
+      images: PRODUCT_IMAGES[p.name] || p.images || [],
+      variations: variations,
+      attrs_meta: attrs_meta,
+    };
+  });
+}
+
+// ─── Render products grouped by category ────────────────────────────
+function renderProductGrid(products) {
+  const grid = document.getElementById('products-grid');
+  grid.style.display = '';
+
+  // Group by category
+  const groups = {};
+  products.forEach(p => {
+    const cat = p.category || 'Autres';
+    if (!groups[cat]) groups[cat] = [];
+    groups[cat].push(p);
+  });
+
+  // Render in category order
+  CATEGORY_ORDER.forEach(cat => {
+    if (!groups[cat] || groups[cat].length === 0) return;
+    grid.insertAdjacentHTML('beforeend', `<h2 class="boutique__category-title">${cat}</h2>`);
+    groups[cat].forEach(p => {
+      grid.insertAdjacentHTML('beforeend', productCard(p));
+    });
+  });
+  // Remaining uncategorized
+  Object.keys(groups).forEach(cat => {
+    if (CATEGORY_ORDER.includes(cat)) return;
+    grid.insertAdjacentHTML('beforeend', `<h2 class="boutique__category-title">${cat}</h2>`);
+    groups[cat].forEach(p => {
+      grid.insertAdjacentHTML('beforeend', productCard(p));
+    });
+  });
+}
+
 // ─── Fetch products ──────────────────────────────────────────────────
 fetch(API_URL)
   .then(r => r.json())
   .then(data => {
-    products = data;
+    products = transformProducts(data);
     document.getElementById('loading').style.display = 'none';
-    const grid = document.getElementById('products-grid');
-    grid.style.display = '';
-    data.forEach(p => {
-      grid.insertAdjacentHTML('beforeend', productCard(p));
+    renderProductGrid(products);
+    // Attach gallery hover & size events to each product card
+    document.querySelectorAll('.product[data-product-id]').forEach(card => {
+      const id = parseInt(card.dataset.productId);
+      const p = products.find(x => x.id === id);
+      if (!p) return;
+
       // Init default size for variable products
       if (p.variations && p.variations.length > 0) {
-        const firstInStock = p.variations.find(v => v.in_stock);
-        selectedSize[p.id] = firstInStock ? firstInStock.id : p.variations[0].id;
+        selectedSize[p.id] = p.variations[0].id;
       }
       // Gallery hover
-      const card = grid.lastElementChild;
       const imgs = card.querySelectorAll('.product__img');
       if (imgs.length >= 2) {
         const gallery = card.querySelector('.product__gallery');
@@ -124,38 +213,26 @@ function productCard(p) {
   ).join('');
 
   const hasVars = p.variations && p.variations.length > 0;
-  // Single price — updated dynamically when size changes
-  const defaultPrice = hasVars && p.variations.length > 0
-    ? (p.variations.find(v => v.in_stock)?.price ?? p.variations[0].price)
-    : p.price;
+  const defaultPrice = hasVars ? p.variations[0].price : p.price;
   const priceDisplay = `${defaultPrice} €`;
 
   // Size selector for variable products
   let sizeHtml = '';
   if (hasVars) {
     const label = p.attrs_meta[0]?.label || 'Taille';
-    const options = p.variations.map(v => {
-      const sizeName = v.attributes[0]?.name || '';
-      const stockInfo = v.stock !== null
-        ? (v.stock === 0 ? ' — Sur commande' : v.stock <= 5 ? ` — plus que ${v.stock}` : '')
-        : '';
-      return `<option value="${v.id}">${sizeName}${stockInfo}</option>`;
-    }).join('');
-    const firstInStock = p.variations.find(v => v.in_stock);
-    const defaultStock = firstInStock ? firstInStock.stock : null;
+    const options = p.variations.map(v =>
+      `<option value="${v.id}">${v.attributes[0]?.name || ''}</option>`
+    ).join('');
     sizeHtml = `
       <div class="product__size" data-product-id="${p.id}">
         <label for="size-${p.id}">${label}</label>
         <select id="size-${p.id}" class="product__size-select">
           ${options}
         </select>
-        <span class="product__size-stock" id="stock-${p.id}">${stockLabel(defaultStock)}</span>
       </div>`;
-  } else {
-    const inCart = cart.find(c => c.productId === p.id);
-    sizeHtml = '';
   }
 
+  const btnText = '🛒 Ajouter au panier';
   return `
     <article class="product${p.featured ? ' product--featured' : ''}" data-product-id="${p.id}">
       <div class="product__gallery">${imgsHtml}</div>
@@ -166,22 +243,12 @@ function productCard(p) {
         ${sizeHtml}
         <div class="product__pricing">
           <span class="product__price">${priceDisplay}</span>
-          ${!hasVars && p.stock !== null
-            ? `<span class="stock-badge${p.stock <= 5 ? ' low' : ''}">${stockLabel(p.stock)}</span>`
-            : ''}
         </div>
         <button class="btn btn--cart" id="btn-${p.id}" onclick="addToCart(${p.id})">
-          🛒 Ajouter au panier
+          ${btnText}
         </button>
       </div>
     </article>`;
-}
-
-function stockLabel(qty) {
-  if (qty === null) return 'En stock';
-  if (qty === 0) return 'Sur commande';
-  if (qty <= 5) return `Plus que ${qty}`;
-  return 'En stock';
 }
 
 // ─── Size change handler ─────────────────────────────────────────────
@@ -191,18 +258,12 @@ function onSizeChange(productId, variationId) {
   if (!p) return;
   const v = p.variations.find(x => x.id === variationId);
   if (!v) return;
-
-  // Update stock display
-  const stockEl = document.getElementById(`stock-${productId}`);
-  if (stockEl) stockEl.textContent = stockLabel(v.stock);
-
   // Update price display
   const card = document.querySelector(`.product[data-product-id="${productId}"]`);
   if (card) {
     const priceEl = card.querySelector('.product__price');
     if (priceEl) priceEl.textContent = v.price + ' €';
   }
-  // Update button state
   updateAddButtons();
 }
 
@@ -283,24 +344,8 @@ function updateAddButtons() {
   products.forEach(p => {
     const btn = document.getElementById(`btn-${p.id}`);
     if (!btn) return;
-    const hasVars = p.variations && p.variations.length > 0;
-
-    // Check if out of stock (sur commande = still orderable)
-    let isSurCommande = false;
-    if (hasVars) {
-      const vid = selectedSize[p.id];
-      const v = p.variations.find(x => x.id === vid);
-      if (v && v.stock === 0) {
-        isSurCommande = true;
-      }
-    } else if (p.stock === 0) {
-      isSurCommande = true;
-    }
-
-    btn.disabled = false;
-
-    // Count items in cart for this product/variation
     let cartQty = 0;
+    const hasVars = p.variations && p.variations.length > 0;
     cart.forEach(c => {
       if (c.productId === p.id) {
         if (!hasVars || c.variationId === selectedSize[p.id]) {
@@ -308,8 +353,7 @@ function updateAddButtons() {
         }
       }
     });
-
-    btn.textContent = cartQty > 0 ? `✓ Dans le panier (${cartQty})` : (isSurCommande ? 'Sur commande' : '🛒 Ajouter au panier');
+    btn.textContent = cartQty > 0 ? `✓ Dans le panier (${cartQty})` : '🛒 Ajouter au panier';
   });
 }
 
@@ -361,27 +405,31 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
   btn.disabled = true;
   btn.textContent = 'Paiement…';
 
+  const name = document.getElementById('customer-name').value.trim();
+  const email = document.getElementById('customer-email').value.trim();
+
+  if (!name || !email) {
+    alert('Veuillez remplir votre nom et votre email.');
+    btn.disabled = false;
+    btn.textContent = 'Commander';
+    return;
+  }
+
   try {
-    // Add all items to WooCommerce cart via our REST endpoint
-    const res = await fetch('/wp-json/jcc/v1/cart/add', {
+    const res = await fetch('/wp-json/jcc/v1/create-payment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        items: cart.map(c => {
-          // Find the WC variation ID from product data
-          let wcVarId = 0;
-          const prod = products.find(p => p.id === c.productId);
-          if (prod && c.variationId && prod.variations) {
-            const v = prod.variations.find(x => x.id === c.variationId);
-            if (v) wcVarId = v.wc_variation_id || 0;
-          }
-          return {
-            product_id: c.productId,
-            qty: c.qty,
-            size: c.size || '',
-            wc_variation_id: wcVarId,
-          };
-        })
+        cart: cart.map(c => ({
+          productId: c.productId,
+          qty: c.qty,
+          size: c.size || '',
+          price: c.price,
+        })),
+        customer: {
+          name: name,
+          email: email,
+        }
       })
     });
     const data = await res.json();
@@ -389,9 +437,9 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
     if (data.success) {
       cart = [];
       saveCart();
-      window.location.href = data.checkout_url || '/commander/';
+      window.location.href = data.redirect_url;
     } else {
-      alert('Erreur : ' + (data.message || 'Impossible d\'ajouter au panier'));
+      alert('Erreur : ' + (data.message || 'Impossible de créer le paiement'));
       btn.disabled = false;
       btn.textContent = 'Commander';
     }

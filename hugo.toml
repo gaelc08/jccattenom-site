@@ -49,8 +49,6 @@ defaultContentLanguage = 'fr'
     name = 'Espace Membre'
     url = '/espace-membre/'
     weight = 8
-    [menu.main.params]
-      auth = true
 
 [markup.goldmark.renderer]
   unsafe = true
