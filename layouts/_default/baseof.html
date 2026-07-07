@@ -39,8 +39,8 @@
         <a href="{{ .URL }}" class="{{ if .Params.cta }}nav__cta{{ else }}nav__link{{ end }}"{{ if and (not .Params.cta) (hasPrefix .URL "/#") }} data-section="{{ .URL | replaceRE ".*#" "" }}"{{ end }}{{ if .Params.auth }} data-jcc-auth="true" style="display:none"{{ end }}>{{ .Name }}</a>
         {{ end }}
         <!-- Protected member links (shown when logged in) -->
-        <a href="https://nextcloud.judo-cattenom.fr" class="nav__link nav__protected" data-jcc-auth="true">Nextcloud</a>
-        <a href="https://gestion.judo-cattenom.fr" rel="noopener" class="nav__link nav__protected" data-jcc-auth="true">Gestion</a>
+        <a href="/nextcloud/" class="nav__link nav__protected" data-jcc-auth="true">Nextcloud</a>
+        <a href="/gestion/" class="nav__link nav__protected" data-jcc-auth="true">Gestion</a>
         <a href="https://judo-cattenom.fr/wp-login.php?force_redirect=1" class="nav__link nav__protected" data-jcc-auth="true">WP Admin</a>
         <!-- Login / Logout buttons -->
         <span data-jcc-auth="false"><button onclick="JCC_AUTH.login('{{ "/espace-membre/" | absURL }}')" class="nav__auth-btn">Connexion SSO</button></span>
@@ -82,8 +82,8 @@
       </a>
       {{ end }}
       <!-- Protected drawer links -->
-      <a href="https://nextcloud.judo-cattenom.fr" class="drawer__link nav__protected" data-jcc-auth="true">Nextcloud</a>
-      <a href="https://gestion.judo-cattenom.fr" rel="noopener" class="drawer__link nav__protected" data-jcc-auth="true">Gestion</a>
+      <a href="/nextcloud/" class="drawer__link nav__protected" data-jcc-auth="true">Nextcloud</a>
+      <a href="/gestion/" class="drawer__link nav__protected" data-jcc-auth="true">Gestion</a>
       <a href="https://judo-cattenom.fr/wp-login.php?force_redirect=1" class="drawer__link nav__protected" data-jcc-auth="true">WP Admin</a>
       <!-- Logout button in drawer -->
       <a href="#" onclick="JCC_AUTH.logout();return false" class="drawer__link nav__protected" data-jcc-auth="true" style="color:var(--text-dim);font-size:0.82rem">Se déconnecter</a>

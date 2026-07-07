@@ -4,7 +4,7 @@
   "hidden_categories": [
     "iaido"
   ],
-  "generated": "2026-07-07T10:55:48.535141",
+  "generated": "2026-07-07T22:50:52.224119",
   "source": "nextcloud",
   "events": [
     {
@@ -5813,6 +5813,45 @@
       "allDay": false,
       "color": "#10b981",
       "category": "taiso",
+      "location": "Dojo de Cattenom",
+      "description": "",
+      "event_type": "course",
+      "recurring": true
+    },
+    {
+      "id": "mini-poussins-poussins-1-6-8-ans-20270706",
+      "title": "Mini-poussins / Poussins 1 (6-8 ans)",
+      "start": "2027-07-06T17:15:00",
+      "end": "2027-07-06T18:15:00",
+      "allDay": false,
+      "color": "#f59e0b",
+      "category": "enfants",
+      "location": "Dojo de Cattenom",
+      "description": "",
+      "event_type": "course",
+      "recurring": true
+    },
+    {
+      "id": "poussins-2-benjamins-minimes-9-13-ans-20270706",
+      "title": "Poussins 2 / Benjamins / Minimes (9-13 ans)",
+      "start": "2027-07-06T18:15:00",
+      "end": "2027-07-06T19:45:00",
+      "allDay": false,
+      "color": "#f59e0b",
+      "category": "enfants",
+      "location": "Dojo de Cattenom",
+      "description": "",
+      "event_type": "course",
+      "recurring": true
+    },
+    {
+      "id": "cadets-juniors-s-niors-14-ans-et-20270706",
+      "title": "Cadets / Juniors / Séniors (14 ans et +)",
+      "start": "2027-07-06T19:45:00",
+      "end": "2027-07-06T21:15:00",
+      "allDay": false,
+      "color": "#3b82f6",
+      "category": "adultes",
       "location": "Dojo de Cattenom",
       "description": "",
       "event_type": "course",
