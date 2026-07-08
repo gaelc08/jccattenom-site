@@ -12,7 +12,13 @@
 
 var JCC_AUTH = (function () {
 
-  var KC_URL    = 'https://auth.judo-cattenom.fr';
+  // ── Environment auto-detection ──
+  // prod:    judo-cattenom.fr / auth.judo-cattenom.fr
+  // test:    test.judo-cattenom.fr / auth.test.judo-cattenom.fr
+  var _host = window.location.hostname;
+  var _isTest = _host.includes('test.');
+
+  var KC_URL    = _isTest ? 'https://auth.test.judo-cattenom.fr' : 'https://auth.judo-cattenom.fr';
   var KC_REALM  = 'jccattenom';
   var KC_CLIENT = 'jcc-frontend';
   var KC_ROLE   = 'bureau';

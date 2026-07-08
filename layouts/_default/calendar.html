@@ -236,11 +236,11 @@
 (function(){
 var DATA = '/calendar/events.json';
 var HIDDEN = ['iaido'];
-var KC_URL = 'https://auth.judo-cattenom.fr';
+var KC_URL = '{{ if hasPrefix .Site.BaseURL "https://test." }}https://auth.test.judo-cattenom.fr{{ else }}https://auth.judo-cattenom.fr{{ end }}';
 var KC_REALM = 'jccattenom';
 var KC_CLIENT = 'jcc-frontend';
 var KC_ROLE = 'calendrier-admin';
-var REDIRECT_URI = 'https://judo-cattenom.fr/calendrier/';
+var REDIRECT_URI = '{{ if hasPrefix .Site.BaseURL "https://test." }}https://test.judo-cattenom.fr/calendrier/{{ else }}https://judo-cattenom.fr/calendrier/{{ end }}';
 
 var CAT_COLOR = {
   baby:'#ef4444', enfants:'#f59e0b', ados:'#8b5cf6',
