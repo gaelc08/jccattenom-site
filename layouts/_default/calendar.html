@@ -463,12 +463,12 @@ window._fcpDel=function(id){
 
 /* ── ADMIN AUTH OIDC PKCE ── */
 window.adminLogin=function(){
-  /* génère code_verifier + code_challenge PKCE */
-  var verifier = b64url(crypto.getRandomValues(new Uint8Array(32)));
+  /* génère code_verifier + code_challenge PKCE (helpers partagés: pkce-utils.js) */
+  var verifier = JCC_PKCE.b64url(crypto.getRandomValues(new Uint8Array(32)));
   sessionStorage.setItem('pkce_v', verifier);
-  sessionStorage.setItem('pkce_state', b64url(crypto.getRandomValues(new Uint8Array(16))));
+  sessionStorage.setItem('pkce_state', JCC_PKCE.b64url(crypto.getRandomValues(new Uint8Array(16))));
   crypto.subtle.digest('SHA-256', new TextEncoder().encode(verifier)).then(function(buf){
-    var challenge = b64url(new Uint8Array(buf));
+    var challenge = JCC_PKCE.b64url(new Uint8Array(buf));
     var params = new URLSearchParams({
       client_id: KC_CLIENT,
       redirect_uri: REDIRECT_URI,
@@ -491,9 +491,6 @@ window.adminLogout=function(){
   /* logout KC */
   window.location.href=KC_URL+'/realms/'+KC_REALM+'/protocol/openid-connect/logout?post_logout_redirect_uri='+encodeURIComponent(REDIRECT_URI)+'&client_id='+KC_CLIENT;
 };
-function b64url(buf){
-  return btoa(String.fromCharCode.apply(null,buf instanceof Uint8Array?buf:new Uint8Array(buf))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
-}
 function checkAdminSession(){
   /* retour PKCE : code dans URL */
   var params=new URLSearchParams(window.location.search);
@@ -511,7 +508,7 @@ function checkAdminSession(){
     }).then(function(r){return r.json();}).then(function(tok){
       if(tok.access_token){
         /* décoder le token et vérifier le rôle */
-        var payload=JSON.parse(atob(tok.access_token.split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));
+        var payload=JCC_PKCE.parseJWT(tok.access_token);
         var roles=(payload.realm_access&&payload.realm_access.roles)||[];
         if(roles.indexOf(KC_ROLE)>=0){
           sessionStorage.setItem('jcc_adm','1');
@@ -531,10 +528,8 @@ function checkAdminSession(){
     /* vérifier que le token est encore valide */
     var tok=sessionStorage.getItem('jcc_tok');
     if(tok){
-      try{
-        var pl=JSON.parse(atob(tok.split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));
-        if(pl.exp*1000>Date.now()) { activateAdmin(); return; }
-      }catch(e){}
+      var pl=JCC_PKCE.parseJWT(tok);
+      if(pl && pl.exp*1000>Date.now()) { activateAdmin(); return; }
     }
     sessionStorage.removeItem('jcc_adm'); sessionStorage.removeItem('jcc_tok');
   }

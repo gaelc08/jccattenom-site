@@ -24,19 +24,10 @@ var JCC_AUTH = (function () {
   var KC_ROLE   = 'bureau';
 
   // ── Helpers ──
-
-  function b64url(buf) {
-    return btoa(String.fromCharCode.apply(null, new Uint8Array(buf)))
-      .replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
-  }
-
-  function parseJWT(token) {
-    try {
-      return JSON.parse(atob(token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')));
-    } catch (e) {
-      return null;
-    }
-  }
+  // b64url/parseJWT live in pkce-utils.js (JCC_PKCE), shared with
+  // page-level admin auth flows like layouts/_default/calendar.html.
+  var b64url = JCC_PKCE.b64url;
+  var parseJWT = JCC_PKCE.parseJWT;
 
   function getCurrentUrl() {
     var url = window.location.protocol + '//' + window.location.host + window.location.pathname;
