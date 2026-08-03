@@ -22,7 +22,6 @@
   --font-body: 'Inter', system-ui, sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --max-width: 1200px;
-  --banner-h: 44px;
 }
 
 /* === RESET === */
@@ -68,36 +67,9 @@ ul { list-style: none; }
 }
 
 /* === NAV TOP === */
-.announcement-banner {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: var(--banner-h);
-  z-index: 1001;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 16px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
-  color: var(--bg);
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  text-align: center;
-  box-shadow: 0 1px 0 var(--border);
-}
-.announcement-banner svg { flex-shrink: 0; }
-.announcement-banner strong { font-weight: 800; }
-.announcement-banner span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .nav {
   position: fixed;
-  top: var(--banner-h); left: 0; right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 1000;
   transition: background 0.4s var(--ease), box-shadow 0.3s, transform 0.4s var(--ease);
 }
@@ -2123,3 +2095,91 @@ ul { list-style: none; }
   padding: 8px 16px;
   font-size: 0.82rem;
 }
+
+/* === ANNONCE POPUP (page de garde) === */
+.announce-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.announce-popup[hidden] { display: none; }
+.announce-popup__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 9, 18, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.announce-popup__card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px 32px;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  animation: announceIn 0.35s var(--ease);
+}
+@keyframes announceIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.announce-popup__close {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  border: none; border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+.announce-popup__close:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+.announce-popup__icon {
+  width: 64px; height: 64px;
+  margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 18px;
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+.announce-popup__card .section-tag { margin-bottom: 10px; }
+.announce-popup__card h3 {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.announce-popup__card p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+.announce-popup__card p strong { color: var(--accent); font-weight: 700; }
+.announce-popup__card .btn { width: 100%; }
+
+/* === ANNONCE adhésion (début de saison) === */
+.adhesion__notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 18px;
+  padding: 10px 16px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(226, 177, 60, 0.28);
+  border-radius: 12px;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+.adhesion__notice svg { flex-shrink: 0; }
+.adhesion__notice p { margin: 0; color: var(--text); }
+.adhesion__notice strong { color: var(--accent); }
