@@ -63,7 +63,7 @@ Demande de **revue complète d'architecture** : site principal, sous-domaines, s
 
 ### Intégration HelloAsso
 - **API v5** : `https://api.helloasso.com/v5/`
-- **Sync service** : `/opt/judo-infra/services/helloasso-sync/` (Python)
+- **Sync service** : `/opt/jccr-infra/services/helloasso-sync/` (Python)
 - **Données** : adherents.json, commandes, paiements
 - **URL checkout** : HelloAsso standard + API custom bridge
 - **Frontend boutique** : Le thème WordPress est inactif/remplacé par Hugo. WordPress sert uniquement de **backend WooCommerce** (API REST, commandes, gestion stock, paiements). Les pages frontend `/boutique/`, `/panier/`, `/commander/` sont servies par Hugo, qui communique avec l'API WooCommerce/WP en backend.
@@ -136,14 +136,14 @@ Demande de **revue complète d'architecture** : site principal, sous-domaines, s
 ## 7. Backups
 
 ### Script
-- **Script** : `/opt/judo-infra/backup/backup-to-nas.sh`
-- **Cron** : quotidien à 3h00 → `sudo /opt/judo-infra/backup/backup-to-nas.sh >> /opt/judo-infra/backup/logs/cron.log`
+- **Script** : `/opt/jccr-infra/backup/backup-to-nas.sh`
+- **Cron** : quotidien à 3h00 → `sudo /opt/jccr-infra/backup/backup-to-nas.sh >> /opt/jccr-infra/backup/logs/cron.log`
 - **Destination** : NAS Synology (100.88.229.47:22222, clé SSH `backup_nas`)
 - **Processus** : stop → dumps SQL (WP + NC + KC) → archive fichiers → rsync → start
 - **Ordre** : DBs → Keycloak (60s timeout) → NC+WP → Caddy
 - **Downtime** : ~1m30
 - **Rétention** : 14 derniers backups
-| **Restauration** : procédure documentée dans `/opt/judo-infra/backup/RESTORATION.md` — pas testée périodiquement (risque identifié par review Fable 5)
+| **Restauration** : procédure documentée dans `/opt/jccr-infra/backup/RESTORATION.md` — pas testée périodiquement (risque identifié par review Fable 5)
 |- **Monitoring backup** : healthchecks.io (ping en fin de script) — alerte si backup non reçu dans les 30h (period=24h, grace=6h)
 
 ## 8. Monitoring — UptimeRobot
@@ -159,7 +159,7 @@ Demande de **revue complète d'architecture** : site principal, sous-domaines, s
 - **Alert contacts** : tous les 6 monitors ont email + Discord (au départ Auth et Sync n'avaient que l'email).
 
 ### Alertes backup
-- **healthchecks.io** : ping en fin de `/opt/judo-infra/backup/backup-to-nas.sh`
+- **healthchecks.io** : ping en fin de `/opt/jccr-infra/backup/backup-to-nas.sh`
 - Period=24h, Grace=6h (alerte si backup non reçu)
 - Dashboard : [healthchecks.io](https://healthchecks.io) (email de notification)
 
