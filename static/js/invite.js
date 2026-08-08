@@ -17,6 +17,9 @@
   var emailInput = document.getElementById('jccInviteEmail');
   var firstInput = document.getElementById('jccInviteFirstName');
   var lastInput = document.getElementById('jccInviteLastName');
+  var gestionSel = document.getElementById('jccInviteGestion');
+  var nextcloudSel = document.getElementById('jccInviteNextcloud');
+  var wordpressSel = document.getElementById('jccInviteWordpress');
   var feedback = document.getElementById('jccInviteFeedback');
   var submitBtn = document.getElementById('jccInviteSubmit');
   var cancelBtn = document.getElementById('jccInviteCancel');
@@ -32,6 +35,23 @@
     feedback.textContent = '';
   }
 
+  /**
+   * Sur une erreur métier, FastAPI renvoie detail sous forme de chaîne ; sur une
+   * erreur de validation (422), c'est une liste d'objets {loc, msg, type}.
+   * Sans ce tri, la modale afficherait "[object Object]".
+   */
+  function describeError(r) {
+    var detail = r.body && r.body.detail;
+    if (typeof detail === 'string') return detail;
+    if (Array.isArray(detail) && detail.length) {
+      return detail
+        .map(function (d) { return d && d.msg ? String(d.msg) : ''; })
+        .filter(Boolean)
+        .join(' · ') || ('Erreur ' + r.status);
+    }
+    return 'Erreur ' + r.status;
+  }
+
   function setBusy(busy) {
     submitBtn.disabled = busy;
     cancelBtn.disabled = busy;
@@ -42,6 +62,9 @@
     emailInput.value = '';
     firstInput.value = '';
     lastInput.value = '';
+    gestionSel.value = '';
+    nextcloudSel.value = '';
+    wordpressSel.value = '';
     clearFeedback();
     setBusy(false);
     modal.classList.add('is-open');
@@ -62,6 +85,13 @@
       return;
     }
 
+    // L'API refuse une invitation sans accès : on le dit avant l'aller-retour.
+    if (!gestionSel.value && !nextcloudSel.value && !wordpressSel.value) {
+      showFeedback('Sélectionnez au moins un accès à accorder.', 'error');
+      gestionSel.focus();
+      return;
+    }
+
     var session = JCC_AUTH.restoreSession();
     if (!session.authenticated || !session.token) {
       showFeedback('Session expirée — reconnectez-vous.', 'error');
@@ -71,6 +101,9 @@
     var payload = { email: email };
     if (firstInput.value.trim()) payload.firstName = firstInput.value.trim();
     if (lastInput.value.trim()) payload.lastName = lastInput.value.trim();
+    if (gestionSel.value) payload.gestion = gestionSel.value;
+    if (nextcloudSel.value) payload.nextcloud = nextcloudSel.value;
+    if (wordpressSel.value) payload.wordpress = wordpressSel.value;
 
     setBusy(true);
     clearFeedback();
@@ -91,14 +124,16 @@
       .then(function (r) {
         setBusy(false);
         if (!r.ok) {
-          // FastAPI renvoie le message d'erreur dans "detail"
-          showFeedback(r.body.detail || ('Erreur ' + r.status), 'error');
+          showFeedback(describeError(r), 'error');
           return;
         }
         showFeedback(r.body.message || 'Invitation envoyée.', 'success');
         emailInput.value = '';
         firstInput.value = '';
         lastInput.value = '';
+        gestionSel.value = '';
+        nextcloudSel.value = '';
+        wordpressSel.value = '';
       })
       .catch(function (err) {
         setBusy(false);

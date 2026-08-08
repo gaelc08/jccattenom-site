@@ -2300,3 +2300,58 @@ ul { list-style: none; }
     gap: 0;
   }
 }
+
+/* Bloc "Accès à accorder" de la modale d'invitation */
+.jcc-access {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px 6px;
+  margin-bottom: 16px;
+}
+.jcc-access legend {
+  padding: 0 6px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+.jcc-access__hint {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  margin: 0 0 10px;
+}
+.jcc-access__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.jcc-access__name {
+  flex: 0 0 90px;
+}
+.jcc-access__row select {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+.jcc-access__row select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .jcc-access__row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+  .jcc-access__name {
+    flex: none;
+  }
+}

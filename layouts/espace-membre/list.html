@@ -143,6 +143,39 @@
       </label>
     </div>
 
+    <fieldset class="jcc-access">
+      <legend>Accès à accorder</legend>
+      <p class="jcc-access__hint">Au moins un accès est requis.</p>
+
+      <label class="jcc-access__row">
+        <span class="jcc-access__name">Gestion</span>
+        <select id="jccInviteGestion">
+          <option value="">Aucun accès</option>
+          <option value="admin">Administrateur</option>
+          <option value="coach">Entraîneur</option>
+          <option value="benevole">Bénévole</option>
+        </select>
+      </label>
+
+      <label class="jcc-access__row">
+        <span class="jcc-access__name">Nextcloud</span>
+        <select id="jccInviteNextcloud">
+          <option value="">Aucun accès</option>
+          <option value="admin">Administrateur</option>
+          <option value="basic">Accès simple</option>
+        </select>
+      </label>
+
+      <label class="jcc-access__row">
+        <span class="jcc-access__name">Boutique</span>
+        <select id="jccInviteWordpress">
+          <option value="">Aucun accès</option>
+          <option value="shop_manager">Gestionnaire boutique</option>
+          <option value="administrator">Administrateur WordPress</option>
+        </select>
+      </label>
+    </fieldset>
+
     <div id="jccInviteFeedback" class="jcc-modal__feedback" style="display:none"></div>
 
     <div class="jcc-modal__actions">
