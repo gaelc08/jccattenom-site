@@ -90,6 +90,21 @@
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </span>
           </a>
+          <button type="button" id="jccInviteCard" class="member-card member-card--action member-card--button">
+            <div class="member-card__icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="8.5" cy="7" r="4"/>
+                <line x1="20" y1="8" x2="20" y2="14"/>
+                <line x1="23" y1="11" x2="17" y2="11"/>
+              </svg>
+            </div>
+            <h3>Inviter un membre</h3>
+            <p>Créer un compte club et envoyer l'invitation par e-mail</p>
+            <span class="member-card__arrow">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </button>
         </div>
 
         <div class="member-footer">
@@ -100,4 +115,42 @@
 
   </div>
 </section>
+
+<!-- Modale d'invitation.
+     Pas de data-jcc-auth ici : updateUI() remettrait display:'' et l'ouvrirait
+     toute seule à la connexion. La visibilité est pilotée par .is-open en JS. -->
+<div id="jccInviteModal" class="jcc-modal" aria-hidden="true">
+  <div class="jcc-modal__box" role="dialog" aria-modal="true" aria-labelledby="jccInviteTitle">
+    <h3 id="jccInviteTitle">Inviter un membre</h3>
+    <p class="jcc-modal__hint">
+      Un compte est créé dans l'espace club et un e-mail est envoyé à la personne
+      pour qu'elle définisse son mot de passe. Le lien est valable 24&nbsp;h.
+    </p>
+
+    <label class="jcc-field">
+      Adresse e-mail
+      <input id="jccInviteEmail" type="email" autocomplete="off" placeholder="nom@exemple.fr">
+    </label>
+
+    <div class="jcc-field-row">
+      <label class="jcc-field">
+        Prénom <span class="jcc-field__opt">(optionnel)</span>
+        <input id="jccInviteFirstName" type="text" autocomplete="off">
+      </label>
+      <label class="jcc-field">
+        Nom <span class="jcc-field__opt">(optionnel)</span>
+        <input id="jccInviteLastName" type="text" autocomplete="off">
+      </label>
+    </div>
+
+    <div id="jccInviteFeedback" class="jcc-modal__feedback" style="display:none"></div>
+
+    <div class="jcc-modal__actions">
+      <button type="button" id="jccInviteCancel" class="btn">Annuler</button>
+      <button type="button" id="jccInviteSubmit" class="btn btn--primary">Envoyer l'invitation</button>
+    </div>
+  </div>
+</div>
+
+<script src="{{ "js/invite.js" | relURL }}?v=1" defer></script>
 {{ end }}
