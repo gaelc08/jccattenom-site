@@ -2183,3 +2183,175 @@ ul { list-style: none; }
 .adhesion__notice svg { flex-shrink: 0; }
 .adhesion__notice p { margin: 0; color: var(--text); }
 .adhesion__notice strong { color: var(--accent); }
+
+/* === ESPACE MEMBRE : carte-bouton + modale d'invitation === */
+
+/* Une <button> dans la member-grid doit se comporter comme les <a> voisines */
+.member-card--button {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  display: block;
+}
+
+.jcc-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.jcc-modal.is-open {
+  display: flex;
+}
+.jcc-modal__box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.jcc-modal__box h3 {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.jcc-modal__hint {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.jcc-field {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.jcc-field input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 9px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+.jcc-field input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.jcc-field__opt {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+.jcc-field-row {
+  display: flex;
+  gap: 12px;
+}
+.jcc-field-row .jcc-field {
+  flex: 1;
+  min-width: 0;
+}
+
+.jcc-modal__feedback {
+  margin: 4px 0 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.jcc-modal__feedback--error {
+  background: rgba(229, 115, 115, 0.12);
+  border: 1px solid rgba(229, 115, 115, 0.35);
+  color: #e57373;
+}
+.jcc-modal__feedback--success {
+  background: var(--accent-dim);
+  border: 1px solid rgba(226, 177, 60, 0.35);
+  color: var(--accent);
+}
+
+.jcc-modal__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+.jcc-modal__actions .btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .jcc-field-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+/* Bloc "Accès à accorder" de la modale d'invitation */
+.jcc-access {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px 6px;
+  margin-bottom: 16px;
+}
+.jcc-access legend {
+  padding: 0 6px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+.jcc-access__hint {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  margin: 0 0 10px;
+}
+.jcc-access__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.jcc-access__name {
+  flex: 0 0 90px;
+}
+.jcc-access__row select {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+.jcc-access__row select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .jcc-access__row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+  .jcc-access__name {
+    flex: none;
+  }
+}
