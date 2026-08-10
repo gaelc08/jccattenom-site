@@ -1,5 +1,6 @@
 ---
 title: "Nous contacter"
+description: "Contact du Judo Club Cattenom Rodemack : adresse (3 Rue Saint Exupéry, 57570 Cattenom), email contact@judo-cattenom.fr et formulaire."
 ---
 
 ## Coordonnées

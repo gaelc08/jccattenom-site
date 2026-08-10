@@ -1,5 +1,6 @@
 ---
 title: "Tarifs"
+description: "Tarifs et cotisations du Judo Club Cattenom Rodemack saison 2026-2027 : baby judo, mini-poussins, benjamins, cadets, iaïdo et taïso. Règlement en 3 fois possible."
 ---
 
 ## Cotisations saison 2026-2027

@@ -1,5 +1,6 @@
 ---
 title: "Horaires et catégories"
+description: "Horaires et catégories de cours du Judo Club Cattenom Rodemack saison 2026-2027 : baby judo, enfants, ados, adultes, iaïdo et taïso à la Maison des Arts Martiaux de Cattenom."
 ---
 
 ## Planning saison 2026-2027
