@@ -4,6 +4,9 @@ title = 'Judo Club Cattenom Rodemack'
 theme = 'jccattenom-theme'
 defaultContentLanguage = 'fr'
 
+# Désactive les taxonomies par défaut (tags/categories) — pas de contenu associé, évite des pages vides dans le sitemap
+[taxonomies]
+
 [params]
   description = 'Club de Judo, Taïso et Iaïdo à Cattenom depuis plus de 50 ans. Cours pour tous les âges de 3 à 99 ans.'
   logo = '/images/logo.png'
