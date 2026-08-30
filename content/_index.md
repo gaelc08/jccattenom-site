@@ -10,7 +10,7 @@ Les **compétiteurs** du club évoluent à différents niveaux : départemental,
 
 Tout au long de l'année, nous organisons des **stages**, des **échanges inter-clubs**, et des **animations internes** pour les petits comme pour les grands — des moments de partage qui renforcent la convivialité au sein du club.
 
-### Baby Judo (4-5 ans)
+### Baby Judo (3-5 ans)
 
 Éveil moteur et découverte du judo par le jeu. Premiers pas sur le tatami dans une ambiance ludique et bienveillante.
 

@@ -7,7 +7,7 @@ description: "Tarifs et cotisations du Judo Club Cattenom Rodemack saison 2026-2
 
 | Catégorie | Tarif | En 3 fois |
 |-----------|-------|-----------|
-| Baby judo (4-5 ans) | **130 €** | 44 € × 3 |
+| Baby judo (3-5 ans) | **130 €** | 44 € × 3 |
 | Mini-poussins / Poussins (6-9 ans) | **180 €** | 60 € × 3 |
 | Benjamins / Minimes (10-13 ans) | **200 €** | 67 € × 3 |
 | Cadets / Juniors / Séniors / Vétérans | **210 €** | 70 € × 3 |
