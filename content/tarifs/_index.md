@@ -23,32 +23,7 @@ _Exemple : pour 3 licenciés au tarif "cadets" (210 €), le total est de 3 × 2
 ## Modalités de paiement
 
 - **En ligne** (carte bancaire) via [HelloAsso](https://www.helloasso.com/associations/judo-club-cattenom-rodemack) — paiement sécurisé, sans frais
-- **Par chèque** à l'ordre de *Judo Club Cattenom Rodemack*
-- **En espèces** — remis au responsable lors de la première séance
 
 Pour le paiement en 3 fois, le premier règlement est dû à l'inscription, les deux suivants à 30 et 60 jours.
-
-## Pass'Sport 2026-2027
-
-L'aide de l'État à l'inscription en club est reconduite pour la saison 2026-2027, avec un montant ramené à **50 €** (contre 70 € en 2025-2026) et un nouveau critère d'éligibilité qui permet le retour des 6-13 ans, exclus l'an dernier.
-
-### Qui peut en bénéficier ?
-
-| Public | Âge | Condition |
-|--------|-----|-----------|
-| Enfants / adolescents | 6 à 17 ans révolus | Foyer allocataire (CAF/MSA) dont le quotient familial est inférieur ou égal à 699 €/mois (revenus 2024) |
-| Jeunes en situation de handicap | 6 à 19 ans révolus | Bénéficiaires de l'AEEH |
-| Adultes en situation de handicap | 16 à 30 ans révolus | Bénéficiaires de l'AAH |
-| Étudiants | Jusqu'à 28 ans révolus | Boursiers CROUS, ou aide annuelle sous conditions de ressources |
-
-### Comment ça marche ?
-
-- Un **code unique** est envoyé automatiquement aux familles éligibles (aucune démarche nécessaire).
-- En cas de non-réception ou de perte, une demande est possible jusqu'au **31 décembre 2026** sur le site officiel du Pass'Sport : [pass.sports.gouv.fr](https://www.pass.sports.gouv.fr/).
-- Le Pass'Sport est utilisable pour toute adhésion et/ou prise de licence entre le **1er septembre et le 31 décembre 2026**.
-
-### Nouveauté 2026-2027
-
-Le critère d'éligibilité des 6-17 ans n'est plus la seule perception de l'ARS (Aide de Rentrée Scolaire) : il repose désormais sur le **quotient familial CAF/MSA inférieur ou égal à 699 €/mois** (calculé sur les revenus 2024), ce qui réintègre les 6-13 ans.
 
 [S'inscrire maintenant](/#adhesion)
