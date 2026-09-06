@@ -1,6 +1,9 @@
 name: CI
 
 on:
+  # Toute PR (quelle que soit sa branche cible) déclenche déjà un run à
+  # chaque push sur sa branche. Le push sur main ne sert qu'à revalider
+  # après un merge (ou un push direct sans PR) — ce n'est pas un doublon.
   pull_request:
   push:
     branches: ["main"]
